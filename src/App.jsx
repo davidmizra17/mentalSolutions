@@ -1,9 +1,10 @@
-import { createLogger } from "vite";
 import "./App.css";
+import styles from "./App.css";
 import Jerry from "./assets/celebrity_jerry.jpeg";
 import LeonardSmith from "./assets/leonard_smith.jpeg";
 import LighthouseKeeper from "./assets/lighthouse_keeper.jpeg";
 import PatGueterman from "./assets/pat_gueterman.jpeg";
+import Card from "./components/Card/Card";
 
 function App() {
   const characters = [
@@ -13,7 +14,7 @@ function App() {
       status: "Alive",
       first_seen_in: "Rixty Minutes",
       species: "Human",
-      image: Jerry.src,
+      image: Jerry,
     },
     {
       name: "Leonard Smith",
@@ -21,7 +22,7 @@ function App() {
       status: "Alive",
       first_seen_in: "Anatomy Park",
       species: "Human",
-      image: LeonardSmith.src,
+      image: LeonardSmith,
     },
     {
       name: "Light House Keeper",
@@ -29,7 +30,7 @@ function App() {
       status: "Dead",
       first_seen_in: "Look Who's Purging Now",
       species: "Alien",
-      image: LighthouseKeeper.src,
+      image: LighthouseKeeper,
     },
     {
       name: "Pat Gueterman",
@@ -37,15 +38,22 @@ function App() {
       status: "Dead",
       first_seen_in: "The Wedding Squanchers",
       species: "Robot",
-      image: PatGueterman.src,
+      image: PatGueterman,
     },
   ];
 
-  console.log(characters)
+  console.log(characters);
 
   return (
     <div>
-      <h1>My Favorite Characters</h1>
+      <h1>Rick and Morty Characters</h1>
+      <div className={styles.characters}>
+        {characters.map((character) => (
+          <>
+            <Card character={character} />
+          </>
+        ))}
+      </div>
     </div>
   );
 }
