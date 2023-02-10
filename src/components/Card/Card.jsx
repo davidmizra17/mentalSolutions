@@ -12,26 +12,30 @@ function Card({ character }) {
         />
       </div>
       <div className={styles.rightSideContainer}>
-        <h2 className={styles.name}>{character.name}</h2>
-        <div className={styles.statusRow}>
-          <div
-            className={
-              character.status === "Alive"
-                ? styles.aliveStatus
-                : styles.deadStatus
-            }
-          />
-          <h3>
-            {character.status} - {character.species}
+        <div className={styles.infoContainer}>
+          <h2 className={styles.name}>{character.name}</h2>
+          <div className={styles.statusRow}>
+            <div
+              className={
+                character.status === "Alive"
+                  ? styles.aliveStatus
+                  : styles.deadStatus
+              }
+            />
+            <h3>
+              {character.status} - {character.species}
+            </h3>
+          </div>
+        </div>
+        <div className={styles.infoContainer}>
+          <h3 className={styles.subtitle}>Last known location:</h3>
+          <h3 className={styles.subtitleInfo}>
+            {character.last_known_location}
           </h3>
         </div>
         <div>
-          <h3 className={styles.subtitle}>Last known location:</h3>
-          <h3>{character.last_known_location}</h3>
-        </div>
-        <div>
           <h3 className={styles.subtitle}>First seen in:</h3>
-          <h3>{character.first_seen_in}</h3>
+          <h3 className={styles.subtitleInfo}>{character.first_seen_in}</h3>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import "./App.css";
-import styles from "./App.css";
 import Jerry from "./assets/celebrity_jerry.jpeg";
 import LeonardSmith from "./assets/leonard_smith.jpeg";
 import LighthouseKeeper from "./assets/lighthouse_keeper.jpeg";
@@ -42,15 +41,13 @@ function App() {
     },
   ];
 
-  console.log(characters);
-
   return (
-    <div>
-      <h1>Rick and Morty Characters</h1>
-      <div className={styles.characters}>
-        {characters.map((character) => (
+    <div className="container">
+      <h1 className="title">Rick and Morty Characters</h1>
+      <div className="characters">
+        {characters.map((character, idx) => (
           <>
-            <Card character={character} />
+            <Card character={character} key={idx} />
           </>
         ))}
       </div>

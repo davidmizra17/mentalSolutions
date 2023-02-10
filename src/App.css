@@ -1,0 +1,18 @@
+.container {
+  background: rgb(39, 43, 51);
+  height: 100vh;
+  padding: 30px;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+}
+
+.characters {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
