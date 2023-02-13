@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #181b20;
+  padding: 24px 120px;
+}
+
+.navbar .menuList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar .menuList .menuItem {
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.navbar .menuList .menuItem:hover {
+  border-color: #272b33;
+  background: #23262e;
+}
+
+.navbar .menuList .menuItem.menuItemLeft {
+  margin-right: 8px;
+}
+.navbar .menuList .menuItem.menuItemRight {
+  margin-left: 8px;
+}
+
+.navbar .menuList .menuItem .link {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #fff;
+}
