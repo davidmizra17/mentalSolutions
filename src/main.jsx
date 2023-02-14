@@ -10,6 +10,7 @@ import {
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Layout } from "./pages/Layout/Layout";
 import { HomePage } from "./pages/Homepage/HomePage";
+import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: REGISTER_URL,
-        element: <h1>REGISTER PAGE!!!</h1>,
+        element: <RegisterPage />,
       },
     ],
   },
