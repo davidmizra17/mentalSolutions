@@ -29,8 +29,19 @@
 }
 
 .navbar .menuList .menuItem .link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 8px 16px;
   text-decoration: none;
   color: #fff;
+}
+
+.navbar .menuList .menuItem .link .userAvatar {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  background: #3c3e44;
+  margin-right: 8px;
 }
