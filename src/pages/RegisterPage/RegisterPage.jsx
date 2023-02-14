@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
-import { LOGIN_URL } from "../../constants/urls";
+import { HOME_URL, LOGIN_URL } from "../../constants/urls";
+import { signInWithGoogle } from "../../firebase/auth-api";
 
 export function RegisterPage() {
+  const navigate = useNavigate();
+
+  const handleGoogleClick = async () => {
+    await signInWithGoogle({
+      onSuccess: () => navigate(HOME_URL),
+    });
+  };
+
   return (
     <div className={styles.container}>
       <form className={styles.form}>
@@ -62,7 +71,11 @@ export function RegisterPage() {
           Entrar
         </button>
 
-        <button type="button" className={styles.googleBtn}>
+        <button
+          type="button"
+          className={styles.googleBtn}
+          onClick={handleGoogleClick}
+        >
           Registro con google
         </button>
 
