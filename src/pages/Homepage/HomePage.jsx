@@ -22,9 +22,7 @@ export function HomePage() {
             <p className="loading">Loading...</p>
           ) : (
             characters.map((character) => (
-              <>
-                <Card character={character} key={character.name} />
-              </>
+              <Card character={character} key={character.name} />
             ))
           )}
         </div>
