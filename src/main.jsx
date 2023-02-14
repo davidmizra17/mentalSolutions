@@ -11,6 +11,7 @@ import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Layout } from "./pages/Layout/Layout";
 import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: LOGIN_URL,
-        element: <h1>LOGIN PAGE!!!</h1>,
+        element: <LoginPage />,
       },
       {
         path: REGISTER_URL,
