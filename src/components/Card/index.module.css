@@ -10,6 +10,11 @@
   font-size: 25px;
 }
 
+.name:hover {
+  color: #ff9800;
+  cursor: pointer;
+}
+
 .infoContainer {
   margin: 0.5rem 0;
 }
