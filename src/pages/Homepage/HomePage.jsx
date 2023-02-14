@@ -1,10 +1,9 @@
-import "./HomePage.css";
 import Jerry from "../../assets/celebrity_jerry.jpeg";
 import LeonardSmith from "../../assets/leonard_smith.jpeg";
 import LighthouseKeeper from "../../assets/lighthouse_keeper.jpeg";
 import PatGueterman from "../../assets/pat_gueterman.jpeg";
 import Card from "../../components/Card/Card";
-import { Navbar } from "../../components/Navbar/Navbar";
+import "./HomePage.css";
 
 const characters = [
   {
@@ -44,7 +43,6 @@ const characters = [
 export function HomePage() {
   return (
     <>
-      <Navbar />
       <div className="container">
         <h1 className="title">Rick and Morty Characters</h1>
         <div className="characters">

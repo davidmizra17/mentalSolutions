@@ -1,16 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HOME_URL } from "./constants/urls";
-import { HomePage } from "./pages/Homepage/HomePage";
+import {
+  FAVORITES_URL,
+  HOME_URL,
+  LOGIN_URL,
+  REGISTER_URL,
+} from "./constants/urls";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { Layout } from "./pages/Layout/Layout";
+import { HomePage } from "./pages/Homepage/HomePage";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: HOME_URL,
-    element: <HomePage />,
+    element: <Layout />,
     errorElement: <NotFoundPage />,
+    children: [
+      {
+        path: HOME_URL,
+        element: <HomePage />,
+      },
+      {
+        path: FAVORITES_URL,
+        element: <h1>FAVORITES PAGE!!!</h1>,
+      },
+      {
+        path: LOGIN_URL,
+        element: <h1>LOGIN PAGE!!!</h1>,
+      },
+      {
+        path: REGISTER_URL,
+        element: <h1>REGISTER PAGE!!!</h1>,
+      },
+    ],
   },
 ]);
 
