@@ -1,15 +1,45 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
 import { HOME_URL, LOGIN_URL } from "../../constants/urls";
-import { signInWithGoogle } from "../../firebase/auth-api";
+import {
+  registerWithEmailAndPassword,
+  signInWithGoogle,
+} from "../../firebase/auth";
+import { useState } from "react";
 
 export function RegisterPage() {
   const navigate = useNavigate();
+  const [formData, setData] = useState({});
+
+  const onSuccess = () => {
+    navigate(HOME_URL);
+  };
+
+  const onFail = (_error) => {
+    console.log("REGISTER FAILED, Try Again");
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    await registerWithEmailAndPassword({
+      userData: formData,
+      onSuccess,
+      onFail,
+    });
+  };
 
   const handleGoogleClick = async () => {
     await signInWithGoogle({
       onSuccess: () => navigate(HOME_URL),
     });
+  };
+
+  const onChange = (event) => {
+    setData((oldData) => ({
+      ...oldData,
+      [event.target.name]: event.target.value,
+    }));
   };
 
   return (
@@ -20,16 +50,17 @@ export function RegisterPage() {
           Bienvenido! Te invitamos a ser parte de nuestra plataforma.
         </p>
 
-        {/* USERNAME FIELD */}
+        {/* NAME FIELD */}
         <div className={styles.inputContainer}>
-          <label htmlFor="username">
-            <span>Ingresa tu nombre de usuario</span>
+          <label htmlFor="name">
+            <span>Ingresa tu nombre completo</span>
           </label>
           <input
             type="text"
-            name="username"
-            id="username"
-            placeholder="Eg. john_doe"
+            name="name"
+            id="name"
+            placeholder="Eg. John Doe"
+            onChange={onChange}
           />
         </div>
 
@@ -43,6 +74,7 @@ export function RegisterPage() {
             name="email"
             id="email"
             placeholder="Eg. john@email.com"
+            onChange={onChange}
           />
         </div>
 
@@ -56,6 +88,7 @@ export function RegisterPage() {
             name="password"
             id="password"
             placeholder="********"
+            onChange={onChange}
           />
         </div>
 
@@ -64,10 +97,20 @@ export function RegisterPage() {
           <label htmlFor="age">
             <span>Ingresa tu edad</span>
           </label>
-          <input type="number" name="age" id="age" placeholder="Eg. 24" />
+          <input
+            type="number"
+            name="age"
+            id="age"
+            placeholder="Eg. 24"
+            onChange={onChange}
+          />
         </div>
 
-        <button type="submit" className={styles.submitBtn}>
+        <button
+          type="submit"
+          className={styles.submitBtn}
+          onClick={handleSubmit}
+        >
           Entrar
         </button>
 

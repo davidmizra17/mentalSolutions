@@ -36,6 +36,20 @@
   color: #fff;
 }
 
+.navbar .menuList .menuItem .link.logoutBtn {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: red;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+}
+
 .navbar .menuList .menuItem .link .userAvatar {
   content: "";
   display: block;
