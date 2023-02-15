@@ -15,6 +15,7 @@ import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
+import { PublicRoute } from "./components/PublicRoute/PublicRoute";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -22,8 +23,22 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<Layout />}>
           <Route path={HOME_URL} element={<HomePage />} />
-          <Route path={REGISTER_URL} element={<RegisterPage />} />
-          <Route path={LOGIN_URL} element={<LoginPage />} />
+          <Route
+            path={REGISTER_URL}
+            element={
+              <PublicRoute>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path={LOGIN_URL}
+            element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
           <Route
             path={FAVORITES_URL}
             element={

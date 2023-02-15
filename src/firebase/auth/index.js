@@ -82,11 +82,24 @@ export const registerWithEmailAndPassword = async ({
 };
 
 // HANDLE LOGIN WITH EMAIL AND PASSWORD
-export const loginWithEmailAndPassword = async ({ email, password }) => {
+export const loginWithEmailAndPassword = async ({
+  userData,
+  onSuccess,
+  onFail,
+}) => {
   try {
+    const { email, password } = userData;
     await signInWithEmailAndPassword(auth, email, password);
+
+    if (onSuccess) {
+      onSuccess();
+    }
   } catch (error) {
     console.error("LOGIN FAILED", { error });
+
+    if (onFail) {
+      onFail();
+    }
   }
 };
 
