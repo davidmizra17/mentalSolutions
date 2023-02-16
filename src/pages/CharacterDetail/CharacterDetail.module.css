@@ -1,0 +1,50 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #272b33;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0 120px;
+  padding-top: 64px;
+}
+
+.container .loadingTxt {
+  display: block;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 32px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.imageContainer .image {
+  display: block;
+  width: 100%;
+}
+
+.details {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.details .title {
+  display: block;
+  font-size: 3em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.details .info {
+    margin: 16px 0;
+    font-size: 20px;
+    color: #fff;
+}
