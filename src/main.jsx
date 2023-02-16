@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import {
+  CHARACTER_DETAIL_URL,
   FAVORITES_URL,
   HOME_URL,
   LOGIN_URL,
@@ -13,6 +14,7 @@ import { Layout } from "./pages/Layout/Layout";
 import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { CharacterDetailPage } from "./pages/CharacterDetail/CharacterDetail";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
@@ -23,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<Layout />}>
           <Route path={HOME_URL} element={<HomePage />} />
+          <Route path={CHARACTER_DETAIL_URL()} element={<CharacterDetailPage />} />
           <Route
             path={REGISTER_URL}
             element={
@@ -31,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </PublicRoute>
             }
           />
+
           <Route
             path={LOGIN_URL}
             element={
@@ -39,6 +43,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </PublicRoute>
             }
           />
+
           <Route
             path={FAVORITES_URL}
             element={

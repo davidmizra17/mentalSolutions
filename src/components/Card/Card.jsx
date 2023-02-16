@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./index.module.css";
+import { Link } from "react-router-dom";
+import { CHARACTER_DETAIL_URL } from "../../constants/urls";
 
 function Card({ character }) {
   return (
@@ -13,7 +15,14 @@ function Card({ character }) {
       </div>
       <div className={styles.rightSideContainer}>
         <div className={styles.infoContainer}>
-          <h2 className={styles.name}>{character.name}</h2>
+          <h2 className={styles.name}>
+            <Link
+              to={CHARACTER_DETAIL_URL(character.id)}
+              className={styles.link}
+            >
+              {character.name}
+            </Link>
+          </h2>
           <div className={styles.statusRow}>
             <div
               className={

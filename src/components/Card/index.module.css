@@ -15,6 +15,13 @@
   cursor: pointer;
 }
 
+.name .link {
+  font-size: inherit;
+  font-style: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
 .infoContainer {
   margin: 0.5rem 0;
 }
