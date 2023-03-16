@@ -23,7 +23,7 @@ export function Navbar() {
       <ul className={styles.menuList}>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
           <Link to={HOME_URL} className={styles.link}>
-            <span>Personajes</span>
+            <span>Doctores</span>
           </Link>
         </li>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
