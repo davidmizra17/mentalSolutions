@@ -26,7 +26,7 @@ function Card({ character }) {
           <div className={styles.statusRow}>
             <div
               className={
-                character.status === "Alive"
+                character.status === "Morido"
                   ? styles.aliveStatus
                   : styles.deadStatus
               }
