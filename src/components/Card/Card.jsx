@@ -1,15 +1,32 @@
-import React from "react";
+//import React from "react";
 import styles from "./index.module.css";
-import { Link } from "react-router-dom";
+/*import { Link } from "react-router-dom";
 import { CHARACTER_DETAIL_URL } from "../../constants/urls";
 
-function Card({ character }) {
+atributos del doctor: nombre, edad, genero, imagen, biografia
+*/
+
+function Card({ doctor }) {
+  //const {name, age, gender, img, bio, rating} = doctor
   return (
     <div className={styles.container}>
+        <img 
+          src={doctor.img}
+          alt={doctor.name}
+          className={styles.image}
+        />
+        <h2 className={styles.name}>{doctor.name}</h2>  
+        <h2 className={styles.stars}>{doctor.rating}</h2>
+        <h2 className={styles.linkSeeMore}>{url}</h2>
+    </div>
+   );
+
+}
+/*    <div className={styles.container}>
       <div>
         <img
-          src={character.image}
-          alt={character.name}
+          src={doctor.image}
+          alt={doctor.name}
           className={styles.image}
         />
       </div>
@@ -48,7 +65,6 @@ function Card({ character }) {
         </div>
       </div>
     </div>
-  );
-}
-
+*/
+  
 export default Card;
