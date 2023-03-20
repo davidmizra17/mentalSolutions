@@ -25,8 +25,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<Layout />}>
           <Route path={HOME_URL} element={<HomePage />} />
+          
           <Route
-            path={CHARACTER_DETAIL_URL()}
+            path={DOCTOR_DETAIL_URL()}
             element={<CharacterDetailPage />}
           />
           <Route

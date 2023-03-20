@@ -1,12 +1,12 @@
 //import React from "react";
 import styles from "./index.module.css";
-/*import { Link } from "react-router-dom";
-import { CHARACTER_DETAIL_URL } from "../../constants/urls";
+import { Link } from "react-router-dom";
+import { DOCTOR_DETAIL_URL } from "../../constants/urls";
 
-atributos del doctor: nombre, edad, genero, imagen, biografia
-*/
+//atributos del doctor: nombre, edad, genero, imagen, biografia
 
-function Card({ doctor }) {
+
+export function Card({ doctor }) {
   //const {name, age, gender, img, bio, rating} = doctor
   return (
     <div className={styles.container}>
@@ -15,9 +15,9 @@ function Card({ doctor }) {
           alt={doctor.name}
           className={styles.image}
         />
-        <h2 className={styles.name}>{doctor.name}</h2>  
-        <h2 className={styles.stars}>{doctor.rating}</h2>
-        <h2 className={styles.linkSeeMore}>{url}</h2>
+        <p className={styles.name}>{doctor.name}</p>  
+        <p className={styles.stars}>{doctor.rating}</p>
+        <Link to={DOCTOR_DETAIL_URL(doctor.id)} className={styles.linkSeeMore}>Ver información completa</Link>
     </div>
    );
 
@@ -66,5 +66,3 @@ function Card({ doctor }) {
       </div>
     </div>
 */
-  
-export default Card;
