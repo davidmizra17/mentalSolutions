@@ -15,6 +15,7 @@ import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { CharacterDetailPage } from "./pages/CharacterDetail/CharacterDetail";
+import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
@@ -60,7 +61,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={PROFILE_URL}
             element={
               <PrivateRoute>
-                <h1>USER PROFILE E E E E E </h1>
+                <UserProfilePage />
               </PrivateRoute>
             }
           />

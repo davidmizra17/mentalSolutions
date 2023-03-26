@@ -19,7 +19,6 @@ export async function createUser(data) {
   if (uid) {
     return setDoc(doc(db, USERS_COLLECTION, uid), restData);
   }
-
   return addDoc(collection(db, USERS_COLLECTION), restData);
 }
 
