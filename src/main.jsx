@@ -25,7 +25,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<Layout />}>
           <Route path={HOME_URL} element={<HomePage />} />
-          <Route path={CHARACTER_DETAIL_URL()} element={<CharacterDetailPage />} />
+          <Route
+            path={CHARACTER_DETAIL_URL()}
+            element={<CharacterDetailPage />}
+          />
           <Route
             path={REGISTER_URL}
             element={
@@ -61,6 +64,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </PrivateRoute>
             }
           />
+
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
