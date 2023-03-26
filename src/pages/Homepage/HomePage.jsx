@@ -14,19 +14,20 @@ export function HomePage() {
   }, [getCharacters]);
 
   return (
-    <>
-      <div className="container">
-        <h1 className="title">Rick and Morty Characters</h1>
-        <div className="characters">
-          {isLoading ? (
-            <p className="loading">Loading...</p>
-          ) : (
-            characters.map((character) => (
-              <Card character={character} key={character.name} />
-            ))
-          )}
-        </div>
-      </div>
-    </>
+    // <>
+    //   <div className="container">
+    //     <h1 className="title">MentalSolutions</h1>
+    //     <div className="characters">
+    //       {isLoading ? (
+    //         <p className="loading">Loading...</p>
+    //       ) : (
+    //         characters.map((character) => (
+    //           <Card character={character} key={character.name} />
+    //         ))
+    //       )}
+    //     </div>
+    //   </div>
+    // </>
+    <h1></h1>
   );
 }
