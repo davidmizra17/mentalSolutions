@@ -3,11 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./UserProfilePage.module.css";
 import { HOME_URL } from "../../constants/urls";
 import { getUserProfile, updateUser } from "../../firebase/users";
-import { auth } from "../../firebase/config";
+import { auth, storage } from "../../firebase/config";
 
 export function UserProfilePage() {
   const navigate = useNavigate();
   const [formData, setData] = useState({});
+  const [photo, setPhoto] = useState(null);
 
   const onSuccess = () => {
     navigate(HOME_URL);
@@ -38,10 +39,42 @@ export function UserProfilePage() {
     return male ? "Masculino" : "Femenino";
   };
 
+  const handlePhotoChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setPhoto(event.target.files[0]);
+    }
+  };
+  // Sube la imagen al storage y obtiene el URL para guardarlo en el base de datos.
+  const uploadPhoto = async () => {
+    if (photo) {
+      const userUid = auth.currentUser.uid;
+      const storageRef = firebase
+        .storage()
+        .ref(`users/${userUid}/profile-photo`);
+      const snapshot = await storageRef.put(photo);
+      const photoUrl = await snapshot.ref.getDownloadURL();
+      updateUser(userUid, { photoUrl });
+    }
+  };
+
   return (
     <div className={styles.container}>
       <form className={styles.form}>
         <h1 className={styles.title}>Ajustes de perfil</h1>
+
+        {/*FOTO DE PERFIL  */}
+        <div className={styles.inputContainer}>
+          <label htmlFor="photo">
+            <span>Foto de perfil</span>
+          </label>
+          <input
+            type="file"
+            name="photo"
+            id="photo"
+            accept="image/*"
+            onChange={handlePhotoChange}
+          />
+        </div>
 
         {/* NAME FIELD */}
         <div className={styles.inputContainer}>
