@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import { useCharacters } from "../../hooks/useCharacters";
 import "./HomePage.css";
 
 export function HomePage() {
   const { isLoading, characters, getCharacters } = useCharacters();
+  const [doctors, setDoctors] = useState([]);
 
   // FETCH CHARACTERS USING RICK AND MORTY API
   useEffect(() => {

@@ -8,6 +8,7 @@ import {
   LOGIN_URL,
   PROFILE_URL,
   REGISTER_URL,
+  RESERVATION_URL,
 } from "./constants/urls";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Layout } from "./pages/Layout/Layout";
@@ -16,6 +17,7 @@ import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { CharacterDetailPage } from "./pages/CharacterDetail/CharacterDetail";
 import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
+import { ReservationPage } from "./pages/Reservation/ReservationPage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
@@ -63,6 +65,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <PrivateRoute>
                 <UserProfilePage />
               </PrivateRoute>
+            }
+          />
+
+          <Route
+            path={RESERVATION_URL}
+            element={
+              <PublicRoute>
+                <ReservationPage />
+              </PublicRoute>
             }
           />
 
