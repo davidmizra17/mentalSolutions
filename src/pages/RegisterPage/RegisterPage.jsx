@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
-import { HOME_URL, LOGIN_URL, PROFILE_URL } from "../../constants/urls";
+import { PROFILE_DOCTOR_URL, HOME_URL, LOGIN_URL, PROFILE_PATIENT_URL } from "../../constants/urls";
 import {
   registerWithEmailAndPassword,
   signInWithGoogle,
@@ -13,25 +13,86 @@ export function RegisterPage() {
 
   const onSuccess = () => {
     navigate(HOME_URL);
+    // const userId = auth.currentUser.uid;
+    // const userRef = db.collection("users").doc(userId);
+  
+    // const userUrl = userRef.get().then((doc) => {
+    //   if (doc.exists) {
+    //     const role = doc.data().role; // get the role field from the document data
+    
+    //     if (role === "Patient") {
+    //       navigate(PROFILE_PATIENT_URL); // return patient profile URL
+    //     } else if (role === "Doctor") {
+    //       navigate(PROFILE_DOCTOR_URL); // return doctor profile URL
+    //     } else {
+    //       throw new Error(`Invalid role: ${role}`);
+    //     }
+    //   } else {
+    //     throw new Error("No such document!");
+    //   }
+    // }).catch((error) => {
+    //   throw new Error("Error getting document:", error);
+    // });
   };
 
   const onFail = (_error) => {
     console.log("REGISTER FAILED, Try Again");
   };
 
+  //TODO - revisar esta funcion
+  const getRole = () => {
+    console.log("golazzo");
+    const doctor = document.getElementById("doctor").checked;
+    // console.log(doctor);
+    // handleSubmit()
+    // const helper = dataForm.
+    return doctor ? "Doctor" : "Paciente";
+  };
+
+  // const getRole = () => {
+  // if(document.getElementById("doctor").value === "Doctor"){
+  //   console.log("puta");
+  //   navigate(PROFILE_DOCTOR_URL);
+  // }
+  // }
+
+  const handleRole = () => {
+
+    // const role = getRole();
+    // document.getElementById("doctor").checked;
+    // navigate(PROFILE_DOCTOR_URL);
+    if(document.getElementById("doctor").checked){
+      navigate(PROFILE_DOCTOR_URL);
+     }else{
+      navigate(PROFILE_PATIENT_URL);
+     }
+  };
+
+
   const handleSubmit = async (event) => {
+    console.log("zorra");
+    // console.log(getRole.getElementById());
     event.preventDefault();
+
 
     await registerWithEmailAndPassword({
       userData: formData,
+    //  handleRole,
       onSuccess,
-      onFail,
+      // handleRole,
+      // onFail,
     });
+    
   };
 
   const handleGoogleClick = async () => {
+    console.log("perra");
     await signInWithGoogle({
-      onSuccess: () => navigate(PROFILE_URL),
+      
+
+      // handleRole: () => navigate(PROFILE_URL),
+      handleRole,
+
     });
   };
 
@@ -105,11 +166,37 @@ export function RegisterPage() {
             onChange={onChange}
           />
         </div>
+{/* VERIFICACION DOCTOR O PACIENTE */}
+        <div>
+          <label htmlFor="role">
+            <span>¿Es usted doctor o paciente?</span>
+            <br />
+          </label>
+          <label htmlFor="doctor">Doctor</label>
+          <input
+            type="radio"
+            name="role"
+            id="doctor"
+            value="Doctor"
+            checked={formData.role === "Doctor"}
+            onChange={onChange}
+          />
+          <label htmlFor="paciente">Paciente</label>
+          <input
+            type="radio"
+            name="role"
+            id="paciente"
+            value="Paciente"
+            checked={formData.role === "Paciente"}
+            onChange={onChange}
+          />
+        </div>
 
         <button
           type="submit"
           className={styles.submitBtn}
           onClick={handleSubmit}
+          
         >
           Entrar
         </button>
@@ -118,6 +205,7 @@ export function RegisterPage() {
           type="button"
           className={styles.googleBtn}
           onClick={handleGoogleClick}
+          // onClick={getRole}
         >
           Registro con google
         </button>

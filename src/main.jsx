@@ -6,7 +6,8 @@ import {
   FAVORITES_URL,
   HOME_URL,
   LOGIN_URL,
-  PROFILE_URL,
+  PROFILE_PATIENT_URL,
+  PROFILE_DOCTOR_URL,
   REGISTER_URL,
 } from "./constants/urls";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
@@ -16,6 +17,12 @@ import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { CharacterDetailPage } from "./pages/CharacterDetail/CharacterDetail";
 import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
+import { DoctorPage } from "./pages/DoctorPage/DoctorPage";
+// import {DoctorPage} from './pages/DoctorPage/DoctorPage';
+// import { DoctorPage } from '../DoctorPage';
+// import { DoctorPage } from "./pages/DoctorPage/DoctorPage";
+
+// import { DoctorPage } from "./pages/DoctorPage/DoctorPage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
@@ -56,15 +63,24 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </PrivateRoute>
             }
           />
-
+          {/* REVISAR */}
           <Route
-            path={PROFILE_URL}
+            path={PROFILE_DOCTOR_URL}
+            element={
+            <PrivateRoute>
+              <DoctorPage />
+              </PrivateRoute>
+              }
+              />
+          <Route
+            path={PROFILE_PATIENT_URL}
             element={
               <PrivateRoute>
                 <UserProfilePage />
               </PrivateRoute>
             }
           />
+
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

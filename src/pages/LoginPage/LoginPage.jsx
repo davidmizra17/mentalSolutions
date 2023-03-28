@@ -33,9 +33,18 @@ export function LoginPage() {
     setFormData((oldData) => ({ ...oldData, [name]: value }));
   };
 
+  const handleRole = () => {
+    if(getRole === "Doctor"){
+      navigate(PROFILE_DOCTOR_URL);
+     }else{
+      navigate(PROFILE_PATIENT_URL);
+     }
+  }
+//TODO - aqui se verifica a donde se va a redirigir al usuario dependiendo de si es doctor o paciente
   const handleGoogleClick = async () => {
     await signInWithGoogle({
-      onSuccess: () => navigate(PROFILE_URL),
+      // onSuccess: () => navigate(PROFILE_URL),
+      handleRole,
     });
   };
 
