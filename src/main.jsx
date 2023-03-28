@@ -78,6 +78,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             }
           />
 
+          <Route path="/doctors/:doctorName" />
+
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
