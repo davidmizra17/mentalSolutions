@@ -99,7 +99,7 @@ export function UserProfilePage() {
             type="number"
             name="phone"
             id="phone"
-            placeholder="TODO: colocar phone number del usuario en bd"
+            placeholder="Número telefónico"
             onChange={onChange}
           />
         </div>

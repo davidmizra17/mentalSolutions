@@ -19,6 +19,7 @@ import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
+import ChatPage from "./pages/ChatPage/ChatPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -52,7 +53,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={FAVORITES_URL}
             element={
               <PrivateRoute>
-                <h1>FAVORITES PAGE!!!</h1>
+                <ChatPage />
               </PrivateRoute>
             }
           />
