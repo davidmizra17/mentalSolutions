@@ -141,7 +141,7 @@ export function RegisterPage() {
           className={styles.submitBtn}
           onClick={handleSubmit}
         >
-          Entrar
+          Registrarte
         </button>
 
         <button

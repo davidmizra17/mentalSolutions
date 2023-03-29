@@ -1,7 +1,10 @@
 .container {
   background: #fff;
   display: flex;
+  margin: auto;
   justify-content: center;
+  justify-self: center;
+  width: 100%;
 }
 
 .container .form {
@@ -16,12 +19,12 @@
 }
 
 .container .form .title {
-  font-size: 36px;
+  font-size: 42px;
   text-align: center;
   letter-spacing: -2%;
   line-height: 44px;
   font-weight: 600;
-  color: #101828;
+  color: #9db9ff;
 }
 
 .container .form .welcomeTxt {
@@ -39,7 +42,7 @@
   font-weight: 500;
   line-height: 20px;
   margin-bottom: 6px;
-  color: #344054;
+  color: #9db9ff;
 }
 .container .form .inputContainer input {
   display: block;
@@ -56,7 +59,13 @@
 .container .form .inputContainer input::placeholder {
   color: #667085;
 }
-
+.select {
+  text-align: center;
+}
+.options {
+  padding: 5px 32px 5px 32px;
+  display: inline-flex;
+}
 .container .form .submitBtn,
 .container .form .googleBtn {
   display: block;
@@ -78,7 +87,7 @@
 .container .form .googleBtn {
   background: #ffffff;
   border: 1px solid #d0d5dd;
-  color: #344054;
+  color: #9db9ff;
 }
 
 .container .form .loginRedirect {
@@ -88,10 +97,19 @@
   font-size: 14px;
   line-height: 20px;
   color: #475467;
+  justify-content: center;
+  justify-items: center;
 }
 
 .container .form .loginRedirect .redirectLink {
   font-weight: 600;
-  color: #181b20;
+  color: #9db9ff;
   text-decoration: underline;
+  justify-self: center;
+}
+
+.centrate {
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
 }
