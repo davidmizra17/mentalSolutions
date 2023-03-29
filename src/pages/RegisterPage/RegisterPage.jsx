@@ -6,13 +6,20 @@ import {
   signInWithGoogle,
 } from "../../firebase/auth";
 import { useState } from "react";
+import { useUserContext } from "../../contexts/UserContext";
 
 export function RegisterPage() {
   const navigate = useNavigate();
   const [formData, setData] = useState({});
+  const { user, isLoadingUser } = useUserContext();
 
   const onSuccess = () => {
-    navigate(HOME_URL);
+    console.log("GOLAZO");
+    if (user.role === "Paciente") {
+      navigate("/profile-patient");
+    } else if (user.role === "Doctor") {
+      navigate("/profile-doctor");
+    }
   };
 
   const onFail = (_error) => {
@@ -105,7 +112,30 @@ export function RegisterPage() {
             onChange={onChange}
           />
         </div>
-
+        <div>
+          <label htmlFor="role">
+            <span>¿Es usted doctor o paciente?</span>
+            <br />
+          </label>
+          <label htmlFor="doctor">Doctor</label>
+          <input
+            type="radio"
+            name="role"
+            id="doctor"
+            value="Doctor"
+            checked={formData.role === "Doctor"}
+            onChange={onChange}
+          />
+          <label htmlFor="paciente">Paciente</label>
+          <input
+            type="radio"
+            name="role"
+            id="paciente"
+            value="Paciente"
+            checked={formData.role === "Paciente"}
+            onChange={onChange}
+          />
+        </div>
         <button
           type="submit"
           className={styles.submitBtn}

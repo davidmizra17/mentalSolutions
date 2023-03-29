@@ -1,7 +1,11 @@
 //import React from "react";
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { CHARACTER_DETAIL_URL } from "../../constants/urls";
+=======
+import { DOCTOR_DETAILS_URL } from "../../constants/urls";
+>>>>>>> 688c6c18dfe835397fb3a542bfe5dcdba206c2eb
 
 function Card({ character }) {
   return (
@@ -29,8 +33,17 @@ function Card({ character }) {
       <div className={styles.rightSideContainer}>
         <div className={styles.infoContainer}>
           <h2 className={styles.name}>
-            <Link to={`/doctores/${user.name}`}>
-              {user.name} className={styles.link}
+            {" "}
+            <Link
+              to={{
+                pathname: DOCTOR_DETAILS_URL,
+                state: {
+                  user,
+                },
+              }}
+              className={styles.link}
+            >
+              {user.name}
             </Link>
           </h2>
           <div className={styles.statusRow}>
