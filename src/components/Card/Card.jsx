@@ -13,15 +13,7 @@ function Card({ user }) {
         <div className={styles.infoContainer}>
           <h2 className={styles.name}>
             {" "}
-            <Link
-              to={{
-                pathname: DOCTOR_DETAILS_URL,
-                state: {
-                  user,
-                },
-              }}
-              className={styles.link}
-            >
+            <Link to={`/doctors/${user.id}`} className={styles.link}>
               {user.name}
             </Link>
           </h2>

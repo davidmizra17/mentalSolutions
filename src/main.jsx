@@ -15,14 +15,13 @@ import { Layout } from "./pages/Layout/Layout";
 import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
-import { DoctorDetailsPage } from "./pages/DoctorDetailsPage/DoctorDetailsPage";
 import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
 import { ReservationPage } from "./pages/Reservation/ReservationPage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
 import ChatPage from "./pages/ChatPage/ChatPage";
-import { DoctorDetailPage } from "./pages/DoctorDetail/DoctorDetailPage";
+import { DoctorDetailsPage } from "./pages/DoctorDetailsPage/DoctorDetailsPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -84,7 +83,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             }
           />
 
-          <Route path="/doctors/:doctorName" element={<DoctorDetailPage />} />
+          <Route path="/doctors/:doctorName" element={<DoctorDetailsPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>

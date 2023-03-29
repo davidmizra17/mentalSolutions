@@ -63,7 +63,7 @@ export function Navbar() {
             <>
               <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
                 <Link to={LOGIN_URL} className={styles.link}>
-                  <span>hola</span>
+                  <span>Iniciar Sesión</span>
                 </Link>
               </li>
               <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
