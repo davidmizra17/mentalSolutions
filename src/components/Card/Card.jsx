@@ -1,50 +1,41 @@
 import React from "react";
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
-import { CHARACTER_DETAIL_URL } from "../../constants/urls";
+import { DOCTOR_DETAILS_URL } from "../../constants/urls";
 
-function Card({ character }) {
+function Card({ user }) {
   return (
     <div className={styles.container}>
       <div>
-        <img
-          src={character.image}
-          alt={character.name}
-          className={styles.image}
-        />
+        <img src={user.image} alt={user.name} className={styles.image} />
       </div>
       <div className={styles.rightSideContainer}>
         <div className={styles.infoContainer}>
           <h2 className={styles.name}>
+            {" "}
             <Link
-              to={CHARACTER_DETAIL_URL(character.id)}
+              to={{
+                pathname: DOCTOR_DETAILS_URL,
+                state: {
+                  user,
+                },
+              }}
               className={styles.link}
             >
-              {character.name}
+              {user.name}
             </Link>
           </h2>
           <div className={styles.statusRow}>
-            <div
-              className={
-                character.status === "Alive"
-                  ? styles.aliveStatus
-                  : styles.deadStatus
-              }
-            />
-            <h3>
-              {character.status} - {character.species}
-            </h3>
+            <h3>{user.type}</h3>
           </div>
         </div>
-        <div className={styles.infoContainer}>
-          <h3 className={styles.subtitle}>Last known location:</h3>
-          <h3 className={styles.subtitleInfo}>
-            {character.last_known_location}
-          </h3>
+        <div>
+          <h3 className={styles.subtitle}>Edad:</h3>
+          <h3 className={styles.subtitleInfo}>{user.age}</h3>
         </div>
         <div>
-          <h3 className={styles.subtitle}>First seen in:</h3>
-          <h3 className={styles.subtitleInfo}>{character.first_seen_in}</h3>
+          <h3 className={styles.subtitle}>Rating:</h3>
+          <h3 className={styles.subtitleInfo}>{user.rating}</h3>
         </div>
       </div>
     </div>
