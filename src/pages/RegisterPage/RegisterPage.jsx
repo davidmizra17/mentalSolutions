@@ -54,7 +54,7 @@ export function RegisterPage() {
     }
 
     await signInWithGoogle({
-      onSuccess: () => navigate(PROFILE_URL),
+      onSuccess: () => navigate(HOME_URL),
     });
   };
 

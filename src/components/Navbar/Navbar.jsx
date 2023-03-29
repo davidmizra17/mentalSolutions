@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import {
-  FAVORITES_URL,
   HOME_URL,
   LOGIN_URL,
   PATIENT_PROFILE_URL,
