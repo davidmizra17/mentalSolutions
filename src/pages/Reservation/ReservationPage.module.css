@@ -5,15 +5,50 @@
 }
 
 .title {
-  font-size: 2em;
+  position: absolute;
+  width: 718px;
+  height: 207px;
+  left: 361px;
+  top: -16px;
+  
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
   text-align: center;
-  color: white;
+  
+  color: #9DB9FF;
 }
 
-.characters {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 24px;
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 59.2153px;
+  gap: 23.69px;
+  
+  width: 990.87px;
+  height: 981px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 197.384px 157.907px rgba(0, 0, 0, 0.07), 0px 82.4624px 65.97px rgba(0, 0, 0, 0.0503198), 0px 44.0884px 35.2707px rgba(0, 0, 0, 0.0417275), 0px 24.7156px 19.7725px rgba(0, 0, 0, 0.035), 0px 13.1263px 10.501px rgba(0, 0, 0, 0.0282725), 0px 5.46213px 4.3697px rgba(0, 0, 0, 0.0196802);
+  border-radius: 31.5815px;
+}
+
+.month {
+  width: 287px;
+  height: 57px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 47.3722px;
+  line-height: 57px;
+  
+  color: #FFC6BE; 
 }
 
 .loading {
@@ -26,4 +61,38 @@
   margin-top: 32px;
   grid-column-start: 1;
   grid-column-end: 3;
+}
+
+.numAndDays {
+  width: 47.37px;
+  height: 47.37px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27.6338px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  
+  color: #000000;
+}
+
+.nextBotton {
+  position: absolute;
+  left: 21.43%;
+  right: -21.43%;
+  top: 0%;
+  bottom: 42.86%;
+  
+  background: #000000;
+  transform: matrix(0, 1, 1, 0, 0, 0);  
+}
+
+.insideLayout {
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }

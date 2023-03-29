@@ -41,18 +41,19 @@ export function ReservationPage() {
 
   return (
     <div>
-      <div className="container">
-        <h1>¡Reserva una cita!</h1>
-        <div className="characters">
+      <div className={styles.container}>
+        <h1 className={styles.title}>¡Reserva una cita!</h1>
+        <div>
           {isLoading ? (
-            <p className="loading">Loading...</p>
+            <p className={styles.loading}>Loading...</p>
           ) : (
             doctors.map((doctor) => <Card user={doctor} key={doctor.id} />)
           )}
         </div>
       </div>
-
+            <div >
       <Calendar />
+      </div>
     </div>
   );
 }
