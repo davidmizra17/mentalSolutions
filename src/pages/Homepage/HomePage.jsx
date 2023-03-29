@@ -155,9 +155,6 @@ export function HomePage() {
               3.- Conéctate
             </a>
           </div>
-          <a href="" className={styles.a2}>
-            3.- Conéctate
-          </a>
         </div>
       </div>
 
