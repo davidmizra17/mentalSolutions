@@ -30,13 +30,12 @@ export function LoginPage() {
 
   const onChange = (event) => {
     const { name, value } = event.target;
-
     setFormData((oldData) => ({ ...oldData, [name]: value }));
   };
 
   const handleGoogleClick = async () => {
     await signInWithGoogle({
-      onSuccess: () => navigate(HOME_URL),
+      onSuccess: () => navigate(PROFILE_URL),
     });
   };
 

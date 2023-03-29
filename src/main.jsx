@@ -2,22 +2,26 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import {
-  CHARACTER_DETAIL_URL,
+  DOCTOR_DETAILS_URL,
   FAVORITES_URL,
   HOME_URL,
   LOGIN_URL,
   PROFILE_URL,
   REGISTER_URL,
+  RESERVATION_URL,
 } from "./constants/urls";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Layout } from "./pages/Layout/Layout";
 import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
-import { CharacterDetailPage } from "./pages/CharacterDetail/CharacterDetail";
+import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
+import { ReservationPage } from "./pages/Reservation/ReservationPage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
+import ChatPage from "./pages/ChatPage/ChatPage";
+import { DoctorDetailsPage } from "./pages/DoctorDetailsPage/DoctorDetailsPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -25,10 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<Layout />}>
           <Route path={HOME_URL} element={<HomePage />} />
-          <Route
-            path={CHARACTER_DETAIL_URL()}
-            element={<CharacterDetailPage />}
-          />
+
           <Route
             path={REGISTER_URL}
             element={
@@ -51,7 +52,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={FAVORITES_URL}
             element={
               <PrivateRoute>
-                <h1>FAVORITES PAGE!!!</h1>
+                <ChatPage />
               </PrivateRoute>
             }
           />
@@ -60,10 +61,30 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={PROFILE_URL}
             element={
               <PrivateRoute>
-                <h1>USER PROFILE E E E E E </h1>
+                <UserProfilePage />
               </PrivateRoute>
             }
           />
+
+          <Route
+            path={RESERVATION_URL}
+            element={
+              <PrivateRoute>
+                <ReservationPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={DOCTOR_DETAILS_URL}
+            element={
+              <PrivateRoute>
+                <DoctorDetailsPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route path="/doctors/:doctorName" element={<DoctorDetailsPage />} />
+
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

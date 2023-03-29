@@ -5,10 +5,12 @@ import {
   LOGIN_URL,
   PROFILE_URL,
   REGISTER_URL,
+  RESERVATION_URL,
 } from "../../constants/urls";
 import { useUserContext } from "../../contexts/UserContext";
 import styles from "./Navbar.module.css";
 import { logout } from "../../firebase/auth";
+import logo from "../../assets/mental_solutions.png";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -19,16 +21,15 @@ export function Navbar() {
   };
 
   return (
-    <nav className={styles.navbar}>
+    /*<nav className={styles.navbar}>
       <ul className={styles.menuList}>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
           <Link to={HOME_URL} className={styles.link}>
-            <span>Doctores</span>
-          </Link>
-        </li>
-        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
-          <Link to={FAVORITES_URL} className={styles.link}>
-            <span>Favoritos</span>
+            <img
+              src={logo}
+              alt="mental solutions logo"
+              className={styles.image}
+            />
           </Link>
         </li>
       </ul>
@@ -37,6 +38,11 @@ export function Navbar() {
         <ul className={styles.menuList}>
           {!!user ? (
             <>
+              <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
+                <Link to={RESERVATION_URL} className={styles.link}>
+                  <span>Reservar cita</span>
+                </Link>
+              </li>
               <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
                 <Link to={PROFILE_URL} className={styles.link}>
                   <div className={styles.userAvatar} />
@@ -57,7 +63,7 @@ export function Navbar() {
             <>
               <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
                 <Link to={LOGIN_URL} className={styles.link}>
-                  <span>Iniciar sesión</span>
+                  <span>Iniciar Sesión</span>
                 </Link>
               </li>
               <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
@@ -69,6 +75,32 @@ export function Navbar() {
           )}
         </ul>
       )}
-    </nav>
+    </nav>*/
+    <nav>
+          <input type="checkbox" id="check"></input>
+          <label for="check" className={styles.checkbtn}>
+            <img src="img/barras.png" className={styles.bar}></img>
+          </label>
+          <a href="#" className={styles.enlace}>
+            <img src={logos} alt="" className={styles.logo}></img>
+          </a>
+          <ul>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#">Contacto</a>
+            </li>
+            <li>
+              <a href="#">Iniciar Sesion</a>
+            </li>
+            <li>
+              <a className={styles.active} href="#">
+                Registrarse
+              </a>
+            </li>
+          </ul>
+        </nav>
+         
   );
 }
