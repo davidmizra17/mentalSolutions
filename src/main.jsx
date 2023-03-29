@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import {
-  CHARACTER_DETAIL_URL,
+  DOCTOR_DETAIL_URL,
   FAVORITES_URL,
   HOME_URL,
   LOGIN_URL,
@@ -15,7 +15,7 @@ import { Layout } from "./pages/Layout/Layout";
 import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
-import { CharacterDetailPage } from "./pages/CharacterDetail/CharacterDetail";
+//import { DoctorDetailPage } from "./pages/DoctorDetail/DoctorDetailPage";
 import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
 import { ReservationPage } from "./pages/Reservation/ReservationPage";
 import "./index.css";
@@ -33,7 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           
           <Route
             path={DOCTOR_DETAIL_URL()}
-            element={<CharacterDetailPage />}
+            element={< DoctorDetailPage />}
           />
           <Route
             path={REGISTER_URL}
