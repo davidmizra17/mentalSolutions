@@ -10,6 +10,7 @@ import {
 import { useUserContext } from "../../contexts/UserContext";
 import styles from "./Navbar.module.css";
 import { logout } from "../../firebase/auth";
+import logo from "../../assets/mental_solutions.png";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -24,19 +25,11 @@ export function Navbar() {
       <ul className={styles.menuList}>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
           <Link to={HOME_URL} className={styles.link}>
-            <span>Inicio</span>
-          </Link>
-        </li>
-        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
-          <Link to={FAVORITES_URL} className={styles.link}>
-            <span>Favoritos</span>
-          </Link>
-        </li>
-
-        {/* Prueba ernes para reservation page */}
-        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
-          <Link to={RESERVATION_URL} className={styles.link}>
-            <span>Reservacion (esto es una prueba)</span>
+            <img
+              src={logo}
+              alt="mental solutions logo"
+              className={styles.image}
+            />
           </Link>
         </li>
       </ul>
@@ -45,6 +38,11 @@ export function Navbar() {
         <ul className={styles.menuList}>
           {!!user ? (
             <>
+              <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
+                <Link to={RESERVATION_URL} className={styles.link}>
+                  <span>Reservar cita</span>
+                </Link>
+              </li>
               <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
                 <Link to={PROFILE_URL} className={styles.link}>
                   <div className={styles.userAvatar} />
