@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { db } from "../../firebase/config";
 import { useParams } from "react-router-dom";
 
@@ -25,10 +24,21 @@ export function DoctorDetailsPage() {
     //     console.log("Error getting documents:", error);
     //   });
 
-    fetch(`/api/users/${id}`)
+    fetch(`/firebaseconfig/users/${id}`)
       .then((response) => response.json())
       .then((data) => setUser(data))
       .catch((error) => console.log(error));
+
+    const fetchUser = async () => {
+      try {
+        const userRef = db.collection("users").doc(id);
+        const userDoc = await userRef.get();
+        setUser(userDoc.data());
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUser();
   }, [id]);
 
   return (
