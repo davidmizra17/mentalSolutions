@@ -26,8 +26,8 @@ function Card({ user }) {
           <h3 className={styles.subtitleInfo}>{user.age}</h3>
         </div>
         <div>
-          <h3 className={styles.subtitle}>Rating:</h3>
-          <h3 className={styles.subtitleInfo}>{user.rating}</h3>
+          <h3 className={styles.subtitle}>Años de experiencia:</h3>
+          <h3 className={styles.subtitleInfo}>{user.experience}</h3>
         </div>
       </div>
     </div>

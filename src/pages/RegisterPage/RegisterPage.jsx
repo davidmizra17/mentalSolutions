@@ -1,6 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
-import { HOME_URL, LOGIN_URL, PROFILE_URL } from "../../constants/urls";
+import {
+  HOME_URL,
+  LOGIN_URL,
+  PATIENT_PROFILE_URL,
+  DOCTOR_PROFILE_URL,
+} from "../../constants/urls";
 import {
   registerWithEmailAndPassword,
   signInWithGoogle,
@@ -11,10 +16,10 @@ import { useUserContext } from "../../contexts/UserContext";
 export function RegisterPage() {
   const navigate = useNavigate();
   const [formData, setData] = useState({});
+  const [isRoleSelected, setIsRoleSelected] = useState(false);
   const { user, isLoadingUser } = useUserContext();
 
   const onSuccess = () => {
-    console.log("GOLAZO");
     if (user.role === "Paciente") {
       navigate("/profile-patient");
     } else if (user.role === "Doctor") {
@@ -29,6 +34,11 @@ export function RegisterPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (!isRoleSelected) {
+      alert("Por favor selecciona un rol antes de continuar.");
+      return;
+    }
+
     await registerWithEmailAndPassword({
       userData: formData,
       onSuccess,
@@ -37,8 +47,13 @@ export function RegisterPage() {
   };
 
   const handleGoogleClick = async () => {
+    if (!isRoleSelected) {
+      alert("Por favor selecciona un rol antes de continuar.");
+      return;
+    }
+
     await signInWithGoogle({
-      onSuccess: () => navigate(PROFILE_URL),
+      onSuccess: () => navigate(HOME_URL),
     });
   };
 
@@ -47,6 +62,10 @@ export function RegisterPage() {
       ...oldData,
       [event.target.name]: event.target.value,
     }));
+
+    setIsRoleSelected(
+      event.target.name === "role" && event.target.value !== ""
+    );
   };
 
   return (
@@ -112,29 +131,35 @@ export function RegisterPage() {
             onChange={onChange}
           />
         </div>
-        <div>
+
+        {/* ROLE FIELD */}
+        <div className={styles.inputContainer}>
           <label htmlFor="role">
-            <span>¿Es usted doctor o paciente?</span>
-            <br />
+            <span>Selecciona tu rol:</span>
           </label>
-          <label htmlFor="doctor">Doctor</label>
-          <input
-            type="radio"
-            name="role"
-            id="doctor"
-            value="Doctor"
-            checked={formData.role === "Doctor"}
-            onChange={onChange}
-          />
-          <label htmlFor="paciente">Paciente</label>
-          <input
-            type="radio"
-            name="role"
-            id="paciente"
-            value="Paciente"
-            checked={formData.role === "Paciente"}
-            onChange={onChange}
-          />
+          <div>
+            <label htmlFor="doctor">
+              Doctor
+              <input
+                type="radio"
+                name="role"
+                id="doctor"
+                value="Doctor"
+                checked={formData.role === "Doctor"}
+                onChange={onChange}
+              />
+            </label>
+
+            <label htmlFor="paciente">Paciente</label>
+            <input
+              type="radio"
+              name="role"
+              id="paciente"
+              value="Paciente"
+              checked={formData.role === "Paciente"}
+              onChange={onChange}
+            />
+          </div>
         </div>
         <button
           type="submit"
