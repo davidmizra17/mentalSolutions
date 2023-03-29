@@ -39,6 +39,10 @@ function Card({ character }) {
             </Link>
           </h2>
           <div className={styles.statusRow}>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> develop
             <div
               className={
                 character.status === "Alive"
@@ -49,6 +53,12 @@ function Card({ character }) {
             <h3>
               {character.status} - {character.species}
             </h3>
+<<<<<<< HEAD
+=======
+=======
+            <h3>{user.type}</h3>
+>>>>>>> dbef60116a78fb6b8e31c9d872232d61682b5474
+>>>>>>> develop
           </div>
         </div>
         <div>
