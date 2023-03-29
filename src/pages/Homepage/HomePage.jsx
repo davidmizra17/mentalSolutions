@@ -5,12 +5,32 @@ import { db } from "../../firebase/config";
 import styles from "./HomePage.module.css";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
+import doc1 from "../../assets/doc1.png";
+import unimet from "../../assets/unimet.jpg";
+import platzi from "../../assets/platzi.jpg";
+import udemy from "../../assets/udemy.png";
+import fpv from "../../assets/fpv.jpeg";
+import dc2 from "../../assets/dc2.png";
+import m1 from "../../assets/m1.png";
+import h1 from "../../assets/h1.png";
+import h2 from "../../assets/h2.png";
+import ex1 from "../../assets/3456426.png";
+import ex2 from "../../assets/410909.png";
+import ex3 from "../../assets/_123037.png";
+import ig from "../../assets/ig.png";
+import tw from "../../assets/tw.png";
+import yt from "../../assets/yt.png";
+import tk from "../../assets/tk.png";
+
 export function HomePage() {
+  const [doctors, setDoctors] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div className={styles.container}>
       <div className={styles.div1}>
         <div className={styles.div2}>
-          <img src="../../assets/doc1.png" className={styles.hid}></img>
+          <img src={doc1} className={styles.hid}></img>
         </div>
         <div>
           <h1 className={styles.h1}>Atención a un click de distancia</h1>
@@ -31,23 +51,23 @@ export function HomePage() {
       <div className={styles.slider}>
         <ul>
           <li>
-            <img src="../../unimet.jpg" alt="" />
+            <img src={unimet} alt="" />
           </li>
           <li>
-            <img src="../../platzi.jpg" alt="" />
+            <img src={platzi} alt="" />
           </li>
           <li>
-            <img src="../../fpv.jpeg" alt="" />
+            <img src={fpv} alt="" />
           </li>
           <li>
-            <img src="../../udemy.png" alt="" />
+            <img src={udemy} alt="" />
           </li>
         </ul>
       </div>
 
       <div className={styles.div4}>
         <div className={styles.div5}>
-          <img src="../../assets/dc2.png" className={styles.hid}></img>
+          <img src={dc2} className={styles.hid}></img>
         </div>
         <div>
           <h1 className={styles.h1a}>¿Quienes Somos?</h1>
@@ -73,7 +93,7 @@ export function HomePage() {
           <div className={styles.divresp}>
             <div className={styles.div7}>
               <div className={styles.div8}>
-                <img src="../../assets/m1.png" className={styles.img}></img>
+                <img src={m1} className={styles.img}></img>
               </div>
               <h3 className={styles.h3}>Armando Paredes</h3>
 
@@ -84,7 +104,7 @@ export function HomePage() {
             </div>
             <div className={styles.div7}>
               <div className={styles.div8}>
-                <img src="../../assets/h1.png" className={styles.img}></img>
+                <img src={h1} className={styles.img}></img>
               </div>
               <h3 className={styles.h3}>Mónica Dávila</h3>
 
@@ -95,7 +115,7 @@ export function HomePage() {
             </div>
             <div className={styles.div7}>
               <div className={styles.div8}>
-                <img src="../../assets/h2.png" className={styles.img}></img>
+                <img src={h2} className={styles.img}></img>
               </div>
               <h3 className={styles.h3}>Valentina Díaz</h3>
 
@@ -113,7 +133,7 @@ export function HomePage() {
         <div className={styles.div10}>
           <div className={styles.divresp2}>
             <div className={styles.div11}>
-              <img src="../../assets/3456426.png" className={styles.img2}></img>
+              <img src={ex1} className={styles.img2}></img>
             </div>
             <a href="" className={styles.a2}>
               1.- Regístrate
@@ -121,7 +141,7 @@ export function HomePage() {
           </div>
           <div>
             <div className={styles.div11}>
-              <img src="../../assets/410909.png" className={styles.img2}></img>
+              <img src={ex2} class={styles.img2}></img>
             </div>
             <a href="" className={styles.a2}>
               2.- Agenda tu cita
@@ -129,7 +149,7 @@ export function HomePage() {
           </div>
           <div>
             <div className={styles.div11}>
-              <img src="../../assets/_123037.png" className={styles.img2}></img>
+              <img src={ex3} className={styles.img2}></img>
             </div>
             <a href="" className={styles.a2}>
               3.- Conéctate
@@ -141,15 +161,15 @@ export function HomePage() {
       <footer className={styles.div12}>
         <div className={styles.div13}>
           <div className={styles.div14}>
-            <img src="../../assets/ig.png" className={styles.img3}></img>
-            <img src="../../assets/tw.png" className={styles.img3}></img>
+            <img src={ig} className={styles.img3}></img>
+            <img src={tw} className={styles.img3}></img>
           </div>
           <div className={styles.div15}>
             <h3 className={styles.h3b}>¡Sigue a Mental Solutions!</h3>
           </div>
           <div className={styles.div16}>
-            <img src="../../assets/tk.png" className={styles.img3}></img>
-            <img src="../../assets/yt.png" className={styles.img3}></img>
+            <img src={tk} className={styles.img3}></img>
+            <img src={yt} className={styles.img3}></img>
           </div>
         </div>
         <span className={styles.span}>
