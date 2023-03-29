@@ -9,9 +9,9 @@ import useExternalScripts from "./hooks/useExternalScripts";
 export function HomePage() {
   const [doctors, setDoctors] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const Component = () => { useExternalScripts("https://cdn.tailwindcss.com")}
 
   useEffect(() => {
-    const Component = () => { useExternalScripts("https://cdn.tailwindcss.com")}
 
     const getDoctors = async () => {
       const q = query(
