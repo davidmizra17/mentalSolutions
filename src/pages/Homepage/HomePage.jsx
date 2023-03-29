@@ -22,37 +22,15 @@ import tw from "../../assets/tw.png";
 import yt from "../../assets/yt.png";
 import tk from "../../assets/tk.png";
 
-
-
 export function HomePage() {
   const [doctors, setDoctors] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-
-  useEffect(() => {
-
-    const getDoctors = async () => {
-      const q = query(
-        collection(db, USERS_COLLECTION),
-        where("role", "==", "Doctor")
-      );
-
-      const querySnapshot = await getDocs(q);
-      const docs = [];
-      querySnapshot.forEach((doc) => {
-        docs.push({ id: doc.id, ...doc.data() });
-      });
-      setDoctors(docs);
-      setIsLoading(false);
-    };
-    getDoctors();
-  }, []);
-  
   return (
     <div className={styles.container}>
       <div className={styles.div1}>
         <div className={styles.div2}>
-            <img src={doc1} className={styles.hid}></img>
+          <img src={doc1} className={styles.hid}></img>
         </div>
         <div>
           <h1 className={styles.h1}>Atención a un click de distancia</h1>
@@ -72,16 +50,24 @@ export function HomePage() {
 
       <div className={styles.slider}>
         <ul>
-          <li><img src={unimet} alt="" /></li>
-          <li><img src={platzi} alt=""/></li>
-          <li><img src={fpv} alt="" /></li>
-          <li><img src={udemy} alt="" /></li>
+          <li>
+            <img src={unimet} alt="" />
+          </li>
+          <li>
+            <img src={platzi} alt="" />
+          </li>
+          <li>
+            <img src={fpv} alt="" />
+          </li>
+          <li>
+            <img src={udemy} alt="" />
+          </li>
         </ul>
       </div>
 
       <div className={styles.div4}>
         <div className={styles.div5}>
-            <img src={dc2} className={styles.hid}></img>
+          <img src={dc2} className={styles.hid}></img>
         </div>
         <div>
           <h1 className={styles.h1a}>¿Quienes Somos?</h1>
@@ -95,62 +81,6 @@ export function HomePage() {
             CONTÁCTANOS
           </a>
         </div>
-    </div>
-
-    <section id={styles.psi} >
-        <div className={styles.div6}>
-            <h2 className={styles.h2}>Nuestros psicólogos</h2>
-            <p className={styles.p2}>Trabamos solo con los mejores psicólogos profesionales y experimentados, manteniendo una comunicación segura y privada.</p>
-            <div className={styles.divresp}>
-                <div className={styles.div7}>
-                    <div className={styles.div8}>
-                        <img src={m1} className={styles.img}></img>
-
-                    </div>
-                    <h3 className={styles.h3}>
-                        Armando Paredes
-                    </h3>
-
-                    <p className={styles.p3}>
-                        A través de un modelo de terapia relacional, te acompañaré para que puedas responder de una manera...
-                    </p>
-                </div>
-                <div className={styles.div7}>
-                    <div className={styles.div8}>
-                        <img src={h1} className={styles.img}></img>
-
-                    </div>
-                    <h3 className={styles.h3}>
-                        Mónica Dávila
-                    </h3>
-
-                    <p className={styles.p3}>
-                        Mi objetivo es ayudarte a descubrir tu propia historia de aprendizaje, patrones mal adaptativos y...
-                    </p>
-                </div>
-                <div className={styles.div7}>
-                    <div className={styles.div8}>
-                        <img src={h2} className={styles.img}></img>
-
-                    </div>
-                    <h3 className={styles.h3}>
-                        Valentina Díaz
-                    </h3>
-
-                    <p className={styles.p3}>
-                        Trabajo bajo una perspectiva integradora, intervengo como psicoterapeuta del trauma y...
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div className={styles.characters}>
-        {isLoading ? (
-          <p className={styles.loading}>Loading...</p>
-        ) : (
-          doctors.map((doctor) => <Card user={doctor} key={doctor.id} />)
-        )}
       </div>
 
       <section id={styles.psi}>
@@ -163,7 +93,7 @@ export function HomePage() {
           <div className={styles.divresp}>
             <div className={styles.div7}>
               <div className={styles.div8}>
-                <img src="../../assets/m1.png" className={styles.img}></img>
+                <img src={m1} className={styles.img}></img>
               </div>
               <h3 className={styles.h3}>Armando Paredes</h3>
 
@@ -174,7 +104,7 @@ export function HomePage() {
             </div>
             <div className={styles.div7}>
               <div className={styles.div8}>
-                <img src="../../assets/h1.png" className={styles.img}></img>
+                <img src={h1} className={styles.img}></img>
               </div>
               <h3 className={styles.h3}>Mónica Dávila</h3>
 
@@ -185,7 +115,7 @@ export function HomePage() {
             </div>
             <div className={styles.div7}>
               <div className={styles.div8}>
-                <img src="../../assets/h2.png" className={styles.img}></img>
+                <img src={h2} className={styles.img}></img>
               </div>
               <h3 className={styles.h3}>Valentina Díaz</h3>
 
@@ -201,46 +131,49 @@ export function HomePage() {
       <div className={styles.div9}>
         <h1 className={styles.h1b}>Pasos para Iniciar tu Terápia Online</h1>
         <div className={styles.div10}>
-            <div className={styles.divresp2}>
-                <div className={styles.div11}>
-                    <img src={ex1} className={styles.img2}></img>
-                </div>
-                <a href="" className={styles.a2}>1.- Regístrate</a>
+          <div className={styles.divresp2}>
+            <div className={styles.div11}>
+              <img src={ex1} className={styles.img2}></img>
             </div>
-            <div>
-                <div className={styles.div11}>
-                    <img src={ex2} class={styles.img2}></img>
-                </div>
-                <a href="" className={styles.a2}>2.- Agenda tu cita</a>
+            <a href="" className={styles.a2}>
+              1.- Regístrate
+            </a>
+          </div>
+          <div>
+            <div className={styles.div11}>
+              <img src={ex2} class={styles.img2}></img>
             </div>
-            <div>
-                <div className={styles.div11}>
-                    <img src={ex3} className={styles.img2}></img>
-                </div>
-                <a href="" className={styles.a2}>3.- Conéctate</a>
+            <a href="" className={styles.a2}>
+              2.- Agenda tu cita
+            </a>
+          </div>
+          <div>
+            <div className={styles.div11}>
+              <img src={ex3} className={styles.img2}></img>
             </div>
             <a href="" className={styles.a2}>
               3.- Conéctate
             </a>
           </div>
+          <a href="" className={styles.a2}>
+            3.- Conéctate
+          </a>
         </div>
-      
+      </div>
 
       <footer className={styles.div12}>
         <div className={styles.div13}>
-            <div className={styles.div14}>
-                <img src={ig} className={styles.img3}></img>
-                <img src={tw} className={styles.img3}></img>
-            </div>
-            <div className={styles.div15}>
-             <h3 className={styles.h3b}>¡Sigue a Mental Solutions!</h3>
-
-            </div>
-            <div className={styles.div16}>
-                <img src={tk} className={styles.img3}></img>
-                <img src={yt} className={styles.img3}></img>
-            </div>
-
+          <div className={styles.div14}>
+            <img src={ig} className={styles.img3}></img>
+            <img src={tw} className={styles.img3}></img>
+          </div>
+          <div className={styles.div15}>
+            <h3 className={styles.h3b}>¡Sigue a Mental Solutions!</h3>
+          </div>
+          <div className={styles.div16}>
+            <img src={tk} className={styles.img3}></img>
+            <img src={yt} className={styles.img3}></img>
+          </div>
         </div>
         <span className={styles.span}>
           &copy; 2023 Mental Solutions, S.A.P.I. de C.V. Todos los derechos
