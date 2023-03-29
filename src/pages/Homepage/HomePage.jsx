@@ -55,30 +55,15 @@ export function HomePage() {
         <h1 className="h12">Nuestros aliados</h1>
     </div>
     
-    <div className="contenedor">
-        <div className="slider-contenedor">
-            <section className="contenido-slider">
-                <img src="../../assets/unimet.jpg" alt=""></img>
+    <div className="slider">
+        <ul>
+          <li><img src="../../unimet.jpg" alt="" /></li>
+          <li><img src="../../platzi.jpg" alt=""/></li>
+          <li><img src="../../fpv.jpeg" alt="" /></li>
+          <li><img src="../../udemy.png" alt="" /></li>
+        </ul>
+      </div>
 
-            </section>
-            <section className="contenido-slider">
-                <img src="../../assets/ucv.jpeg" alt=""></img>
-
-            </section>
-            <section className="contenido-slider">
-                <img src="../../assets/fpv.jpeg" alt=""></img>
-
-            </section>
-            <section className="contenido-slider">
-                <img src="../../assets/udemy.png" alt=""></img>
-
-            </section>
-            <section className="contenido-slider">
-                <img src="../../assets/platzi.jpg" alt=""></img>
-
-            </section>
-        </div>
-    </div>
 
 
 
@@ -150,6 +135,14 @@ export function HomePage() {
         </div>
     </section>
 
+    <div className="characters">
+        {isLoading ? (
+          <p className="loading">Loading...</p>
+        ) : (
+          doctors.map((doctor) => <Card user={doctor} key={doctor.id} />)
+        )}
+      </div>
+
     <div className="div9">
         <h1 className="h1b">
             Pasos para Iniciar tu Terápia Online
@@ -197,13 +190,7 @@ export function HomePage() {
 
     </footer>
 
-      <div className="characters">
-        {isLoading ? (
-          <p className="loading">Loading...</p>
-        ) : (
-          doctors.map((doctor) => <Card user={doctor} key={doctor.id} />)
-        )}
-      </div>
+      
     </div>
   );
 }
