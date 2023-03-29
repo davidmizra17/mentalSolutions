@@ -1,12 +1,30 @@
-import React from "react";
+//import React from "react";
 import styles from "./index.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { CHARACTER_DETAIL_URL } from "../../constants/urls";
 
-function Card({ user }) {
+function Card({ character }) {
   return (
     <div className={styles.container}>
+        <img 
+          src={doctor.img}
+          alt={doctor.name}
+          className={styles.image}
+        />
+        <p className={styles.name}>{doctor.name}</p>  
+        <p className={styles.stars}>{doctor.rating}</p>
+        <Link to={DOCTOR_DETAIL_URL(doctor.id)} className={styles.linkSeeMore}>Ver información completa</Link>
+    </div>
+   );
+
+}
+/*    <div className={styles.container}>
       <div>
-        <img src={user.image} alt={user.name} className={styles.image} />
+        <img
+          src={character.image}
+          alt={character.name}
+          className={styles.image}
+        />
       </div>
       <div className={styles.rightSideContainer}>
         <div className={styles.infoContainer}>
@@ -16,7 +34,16 @@ function Card({ user }) {
             </Link>
           </h2>
           <div className={styles.statusRow}>
-            <h3>{user.type}</h3>
+            <div
+              className={
+                character.status === "Alive"
+                  ? styles.aliveStatus
+                  : styles.deadStatus
+              }
+            />
+            <h3>
+              {character.status} - {character.species}
+            </h3>
           </div>
         </div>
         <div>
@@ -29,7 +56,4 @@ function Card({ user }) {
         </div>
       </div>
     </div>
-  );
-}
-
-export default Card;
+*/
