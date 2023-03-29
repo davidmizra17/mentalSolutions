@@ -8,27 +8,6 @@ export function DoctorDetailsPage() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // db.collection("users")
-    //   .where("name", "==", user.name)
-    //   .get()
-    //   .then((querySnapshot) => {
-    //     if (!querySnapshot.empty) {
-    //       const userData = querySnapshot.docs[0].data();
-    //       const { gender, name, email } = userData;
-    //       setDoctorInfo({ gender, name, email });
-    //     } else {
-    //       console.log("No matching documents!");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error getting documents:", error);
-    //   });
-
-    fetch(`/firebaseconfig/users/${id}`)
-      .then((response) => response.json())
-      .then((data) => setUser(data))
-      .catch((error) => console.log(error));
-
     const fetchUser = async () => {
       try {
         const userRef = db.collection("users").doc(id);
@@ -38,8 +17,21 @@ export function DoctorDetailsPage() {
         console.log(error);
       }
     };
+
     fetchUser();
   }, [id]);
+
+  //   const fetchUser = async () => {
+  //     try {
+  //       const userRef = db.collection("users").doc(id);
+  //       const userDoc = await userRef.get();
+  //       setUser(userDoc.data());
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchUser();
+  // }, [id]);
 
   return (
     <div>
