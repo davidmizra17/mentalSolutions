@@ -6,9 +6,6 @@ import styles from "./HomePage.module.css";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 export function HomePage() {
-  const [doctors, setDoctors] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <div className={styles.container}>
       <div className={styles.div1}>
@@ -60,7 +57,7 @@ export function HomePage() {
             este, aquí encontrarás psicólogos que te ayudarán a alcanzar las
             soluciones que necesitas.{" "}
           </p>
-          <a href="" class={styles.a}>
+          <a href="" className={styles.a}>
             CONTÁCTANOS
           </a>
         </div>
@@ -124,7 +121,7 @@ export function HomePage() {
           </div>
           <div>
             <div className={styles.div11}>
-              <img src="../../assets/410909.png" class={styles.img2}></img>
+              <img src="../../assets/410909.png" className={styles.img2}></img>
             </div>
             <a href="" className={styles.a2}>
               2.- Agenda tu cita
