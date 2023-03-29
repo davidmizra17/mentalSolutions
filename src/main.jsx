@@ -23,6 +23,7 @@ import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
 import ChatPage from "./pages/ChatPage/ChatPage";
 import { DoctorPage } from "./pages/DoctorPage/DoctorPage";
+import { DoctorDetailsPage } from "./pages/DoctorDetailsPage/DoctorDetailsPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>

@@ -1,7 +1,7 @@
 .container {
   display: flex;
   height: 220px;
-  background: #181b20;
+  background: #ffd0d0;
   border-radius: 15px;
   margin: 1rem 0;
 }
@@ -28,7 +28,7 @@
 }
 
 .subtitle {
-  color: rgb(158, 158, 158);
+  color: rgb(1, 1, 1);
   font-weight: 300;
   font-size: 18px;
 }
@@ -46,7 +46,7 @@
 }
 
 .rightSideContainer {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding: 0.75rem;
   display: flex;
   flex-direction: column;

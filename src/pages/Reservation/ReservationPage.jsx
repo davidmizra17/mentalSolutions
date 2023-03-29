@@ -42,7 +42,6 @@ export function ReservationPage() {
   return (
     <div>
       <div className="container">
-        <h1>¡Reserva una cita!</h1>
         <div className={styles.cardContainer}>
           {isLoading ? (
             <p className="loading">Loading...</p>
