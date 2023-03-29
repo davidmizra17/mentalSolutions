@@ -5,119 +5,121 @@ import { db } from "../../firebase/config";
 import styles from "./HomePage.module.css";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
+import doc1 from "../../assets/doc1.png";
+import unimet from "../../assets/unimet.jpg";
+import platzi from "../../assets/platzi.jpg";
+import udemy from "../../assets/udemy.png";
+import fpv from "../../assets/fpv.jpeg";
+import dc2 from "../../assets/dc2.png";
+import m1 from "../../assets/m1.png";
+import h1 from "../../assets/h1.png";
+import h2 from "../../assets/h2.png";
+import ex1 from "../../assets/3456426.png";
+import ex2 from "../../assets/410909.png";
+import ex3 from "../../assets/_123037.png";
+import ig from "../../assets/ig.png";
+import tw from "../../assets/tw.png";
+import yt from "../../assets/yt.png";
+import tk from "../../assets/tk.png";
+
 export function HomePage() {
   const [doctors, setDoctors] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="container">
-      <div class="mx-auto  px-8xl:px-0 px-20 my-[20px]">
-        <div class="flex flexbox w-[283.5px] h-[341px] float-right">
-          <img src="img/doc1.png" class="max-[850px]:hidden"></img>
+    <div className={styles.container}>
+      <div className={styles.div1}>
+        <div className={styles.div2}>
+          <img src={doc1} className={styles.hid}></img>
         </div>
         <div>
-          <h1 class="flex text-sky-400 text-[60px] max-[850px]:leading-tight">
-            Atención a un click de distancia
-          </h1>
-          <p class="text-[30px] py-[40px]">
+          <h1 className={styles.h1}>Atención a un click de distancia</h1>
+          <p className={styles.p1}>
             Servicio de atención psicológica que brinda el acompañamiento
             necesario para cada paciente.
           </p>
-          <a href="" class="bg-red-100 rounded-lg px-3 py-1">
+          <a href="" className={styles.a}>
             EMERGENCIA
           </a>
         </div>
       </div>
 
-      <div class="mx-auto  px-8xl:px-0 px-20 my-[40px] pt-[100px] justify-center align-center text-center flex  flex-box clear-both">
-        <h1 class="mx-auto flex text-sky-400 text-[60px] py-[12px]">
-          Nuestros aliados
-        </h1>
+      <div className={styles.div3}>
+        <h1 className={styles.h12}>Nuestros aliados</h1>
       </div>
 
-      <div class="contenedor">
-        <div class="slider-contenedor">
-          <section class="contenido-slider">
-            <img src="img/unimet.jpg" alt=""></img>
-          </section>
-          <section class="contenido-slider">
-            <img src="img/ucv.jpeg" alt=""></img>
-          </section>
-          <section class="contenido-slider">
-            <img src="img/fpv.jpeg" alt=""></img>
-          </section>
-          <section class="contenido-slider">
-            <img src="img/udemy.png" alt=""></img>
-          </section>
-          <section class="contenido-slider">
-            <img src="img/platzi.jpg" alt=""></img>
-          </section>
-        </div>
+      <div className={styles.slider}>
+        <ul>
+          <li>
+            <img src={unimet} alt="" />
+          </li>
+          <li>
+            <img src={platzi} alt="" />
+          </li>
+          <li>
+            <img src={fpv} alt="" />
+          </li>
+          <li>
+            <img src={udemy} alt="" />
+          </li>
+        </ul>
       </div>
-      <div class="mx-auto  px-8xl:px-0 text-right px-20 my-[20px] clear-both">
-        <div class="flex flexbox w-[350px] h-[350px] float-left">
-          <img src="img/dc2.png" class="max-[850px]:hidden"></img>
+
+      <div className={styles.div4}>
+        <div className={styles.div5}>
+          <img src={dc2} className={styles.hid}></img>
         </div>
         <div>
-          <h1 class="text-sky-400 text-[60px] text-right">¿Quienes Somos?</h1>
-          <p class="text-[30px] py-[40px]">
+          <h1 className={styles.h1a}>¿Quienes Somos?</h1>
+          <p className={styles.p1}>
             Nuestro equipo especializado de profesionales están disponibles las
             24 horas del día, si tienes un problema y te sientes superado por
             este, aquí encontrarás psicólogos que te ayudarán a alcanzar las
             soluciones que necesitas.{" "}
           </p>
-          <a href="" class="bg-red-100 rounded-lg px-3 py-1">
+          <a href="" className={styles.a}>
             CONTÁCTANOS
           </a>
         </div>
       </div>
 
-      <section id="psicologos" class="text-center my-[20px] clear-both">
-        <div class="px-[150px] py-[12px] ">
-          <h2 class="mt-0 text-[60px] text-sky-400">Nuestros psicólogos</h2>
-          <p class="mt-0 text-[30px] py-[40px]">
+      <section id={styles.psi}>
+        <div className={styles.div6}>
+          <h2 className={styles.h2}>Nuestros psicólogos</h2>
+          <p className={styles.p2}>
             Trabamos solo con los mejores psicólogos profesionales y
             experimentados, manteniendo una comunicación segura y privada.
           </p>
-          <div class="min-[850px]:flex min-[850px]:justify-center">
-            <div class="bg-gray-200 px-[50px] py-[0px] m-[30px] rounded-[15px] min-[850px]:p-[50px]">
-              <div class="flex justify-center py-[15px]">
-                <img
-                  src="img/m1.png"
-                  class="flex flex-box  rounded-full justify-self-center"
-                ></img>
+          <div className={styles.divresp}>
+            <div className={styles.div7}>
+              <div className={styles.div8}>
+                <img src={m1} className={styles.img}></img>
               </div>
-              <h3 class="text-[25px] min-[850px]:mt-[0px]">Armando Paredes</h3>
+              <h3 className={styles.h3}>Armando Paredes</h3>
 
-              <p class="py-[10px] text-[20px] min-[850px]:block min-[850px]:mb-[30px]">
+              <p className={styles.p3}>
                 A través de un modelo de terapia relacional, te acompañaré para
                 que puedas responder de una manera...
               </p>
             </div>
-            <div class="bg-gray-200 px-[50px] py-[0px] m-[30px] rounded-[15px] min-[850px]:p-[50px]">
-              <div class="flex justify-center py-[15px]">
-                <img
-                  src="img/h1.png"
-                  class="flex flex-box rounded-full justify-self-center"
-                ></img>
+            <div className={styles.div7}>
+              <div className={styles.div8}>
+                <img src={h1} className={styles.img}></img>
               </div>
-              <h3 class="text-[25px] min-[850px]:mt-[0px]">Mónica Dávila</h3>
+              <h3 className={styles.h3}>Mónica Dávila</h3>
 
-              <p class="py-[10px] text-[20px] min-[850px]:block min-[850px]:mb-[30px]">
+              <p className={styles.p3}>
                 Mi objetivo es ayudarte a descubrir tu propia historia de
                 aprendizaje, patrones mal adaptativos y...
               </p>
             </div>
-            <div class="bg-gray-200 px-[50px] py-[0px] m-[30px] rounded-[15px] min-[850px]:p-[50px]">
-              <div class="flex justify-center py-[15px]">
-                <img
-                  src="img/h2.png"
-                  class="flex flex-box  rounded-full justify-self-center"
-                ></img>
+            <div className={styles.div7}>
+              <div className={styles.div8}>
+                <img src={h2} className={styles.img}></img>
               </div>
-              <h3 class="text-[25px] min-[850px]:mt-[0px]">Valentina Díaz</h3>
+              <h3 className={styles.h3}>Valentina Díaz</h3>
 
-              <p class="py-[10px] text-[20px] min-[850px]:block min-[850px]:mb-[30px]">
+              <p className={styles.p3}>
                 Trabajo bajo una perspectiva integradora, intervengo como
                 psicoterapeuta del trauma y...
               </p>
@@ -126,85 +128,58 @@ export function HomePage() {
         </div>
       </section>
 
-      <div class="mx-auto  px-8xl:px-0 px-20 my-[40px]">
-        <h1 class="flex text-sky-400 text-[60px] py-[12px]">
-          Pasos para Iniciar tu Terápia Online
-        </h1>
-        <div class="min-[850px]:flex min-[850px]:justify-center py-[12px] mb-8 lg:mb-0 text-black justify-center text-center py-[20px]">
-          <div class="min-[850px]:px-[20px]">
-            <div class="flex justify-center py-[15px]">
-              <img
-                src="img/3456426.png"
-                class="flex flex-box rounded-full justify-self-center"
-              ></img>
+      <div className={styles.div9}>
+        <h1 className={styles.h1b}>Pasos para Iniciar tu Terápia Online</h1>
+        <div className={styles.div10}>
+          <div className={styles.divresp2}>
+            <div className={styles.div11}>
+              <img src={ex1} className={styles.img2}></img>
             </div>
-            <a
-              href=""
-              class="hover:text-blue-600 lg:mr-7 mb-8 lg:mb-0 no-underline px-10"
-            >
+            <a href="" className={styles.a2}>
               1.- Regístrate
             </a>
           </div>
           <div>
-            <div class="flex justify-center py-[15px]">
-              <img
-                src="img/410909.png"
-                class="flex flex-box rounded-full justify-self-center"
-              ></img>
+            <div className={styles.div11}>
+              <img src={ex2} class={styles.img2}></img>
             </div>
-            <a
-              href=""
-              class="hover:text-blue-600 lg:mr-7 mb-8 lg:mb-0 no-underline px-10"
-            >
+            <a href="" className={styles.a2}>
               2.- Agenda tu cita
             </a>
           </div>
           <div>
-            <div class="flex justify-center py-[15px]">
-              <img
-                src="img/_123037.png"
-                class="flex flex-box rounded-full justify-self-center"
-              ></img>
+            <div className={styles.div11}>
+              <img src={ex3} className={styles.img2}></img>
             </div>
-            <a
-              href=""
-              class="hover:text-blue-600 lg:mr-7 mb-8 lg:mb-0 no-underline px-10"
-            >
+            <a href="" className={styles.a2}>
               3.- Conéctate
             </a>
           </div>
+          <a href="" className={styles.a2}>
+            3.- Conéctate
+          </a>
         </div>
       </div>
 
-      <footer class="w-full absolute flex justify-center align-center flex-col">
-        <div class="flex justify-center align-center flex-wrap mb-[1rem]">
-          <div class="flex flex-box  max-[850px]:justify-evenly">
-            <img src="img/ig.png" class="w-28 h-17 m-[1rem]"></img>
-            <img src="img/tw.png" class="w-20 h-20 m-[1rem]"></img>
+      <footer className={styles.div12}>
+        <div className={styles.div13}>
+          <div className={styles.div14}>
+            <img src={ig} className={styles.img3}></img>
+            <img src={tw} className={styles.img3}></img>
           </div>
-          <div class="flex flex-box max-[850px]:block max-[850px]:box-border max-[850px]:w-full">
-            <h3 class="text-[35px] text-center pb-8 m-[1rem] max-[850px]:align-center">
-              ¡Sigue a Mental Solutions!
-            </h3>
+          <div className={styles.div15}>
+            <h3 className={styles.h3b}>¡Sigue a Mental Solutions!</h3>
           </div>
-          <div class="flex flex-box max-[850px]:justify-evenly">
-            <img src="img/tk.png" class="w-20 h-20 m-[1rem]"></img>
-            <img src="img/yt.png" class="w-20 h-20 m-[1rem]"></img>
+          <div className={styles.div16}>
+            <img src={tk} className={styles.img3}></img>
+            <img src={yt} className={styles.img3}></img>
           </div>
         </div>
-        <span class="flex flex-box justify-center">
+        <span className={styles.span}>
           &copy; 2023 Mental Solutions, S.A.P.I. de C.V. Todos los derechos
           reservados.
         </span>
       </footer>
-
-      <div className="characters">
-        {isLoading ? (
-          <p className="loading">Loading...</p>
-        ) : (
-          doctors.map((doctor) => <Card user={doctor} key={doctor.id} />)
-        )}
-      </div>
     </div>
   );
 }
