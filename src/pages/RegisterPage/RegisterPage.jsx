@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
-import { HOME_URL, LOGIN_URL } from "../../constants/urls";
+import { HOME_URL, LOGIN_URL, PROFILE_URL } from "../../constants/urls";
 import {
   registerWithEmailAndPassword,
   signInWithGoogle,
@@ -31,7 +31,7 @@ export function RegisterPage() {
 
   const handleGoogleClick = async () => {
     await signInWithGoogle({
-      onSuccess: () => navigate(HOME_URL),
+      onSuccess: () => navigate(PROFILE_URL),
     });
   };
 
@@ -53,7 +53,7 @@ export function RegisterPage() {
         {/* NAME FIELD */}
         <div className={styles.inputContainer}>
           <label htmlFor="name">
-            <span>Ingresa tu nombre completo</span>
+            <span>Ingresa tu nombre y apellido</span>
           </label>
           <input
             type="text"

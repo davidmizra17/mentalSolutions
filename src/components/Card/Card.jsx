@@ -1,13 +1,9 @@
 //import React from "react";
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
-import { DOCTOR_DETAIL_URL } from "../../constants/urls";
+import { CHARACTER_DETAIL_URL } from "../../constants/urls";
 
-//atributos del doctor: nombre, edad, genero, imagen, biografia
-
-
-export function Card({ doctor }) {
-  //const {name, age, gender, img, bio, rating} = doctor
+function Card({ character }) {
   return (
     <div className={styles.container}>
         <img 
@@ -25,25 +21,22 @@ export function Card({ doctor }) {
 /*    <div className={styles.container}>
       <div>
         <img
-          src={doctor.image}
-          alt={doctor.name}
+          src={character.image}
+          alt={character.name}
           className={styles.image}
         />
       </div>
       <div className={styles.rightSideContainer}>
         <div className={styles.infoContainer}>
           <h2 className={styles.name}>
-            <Link
-              to={CHARACTER_DETAIL_URL(character.id)}
-              className={styles.link}
-            >
-              {character.name}
+            <Link to={`/doctores/${user.name}`}>
+              {user.name} className={styles.link}
             </Link>
           </h2>
           <div className={styles.statusRow}>
             <div
               className={
-                character.status === "Morido"
+                character.status === "Alive"
                   ? styles.aliveStatus
                   : styles.deadStatus
               }
@@ -53,15 +46,13 @@ export function Card({ doctor }) {
             </h3>
           </div>
         </div>
-        <div className={styles.infoContainer}>
-          <h3 className={styles.subtitle}>Last known location:</h3>
-          <h3 className={styles.subtitleInfo}>
-            {character.last_known_location}
-          </h3>
+        <div>
+          <h3 className={styles.subtitle}>Edad:</h3>
+          <h3 className={styles.subtitleInfo}>{user.age}</h3>
         </div>
         <div>
-          <h3 className={styles.subtitle}>First seen in:</h3>
-          <h3 className={styles.subtitleInfo}>{character.first_seen_in}</h3>
+          <h3 className={styles.subtitle}>Rating:</h3>
+          <h3 className={styles.subtitleInfo}>{user.rating}</h3>
         </div>
       </div>
     </div>

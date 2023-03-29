@@ -5,6 +5,7 @@ import {
   LOGIN_URL,
   PROFILE_URL,
   REGISTER_URL,
+  RESERVATION_URL,
 } from "../../constants/urls";
 import { useUserContext } from "../../contexts/UserContext";
 import styles from "./Navbar.module.css";
@@ -23,12 +24,19 @@ export function Navbar() {
       <ul className={styles.menuList}>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
           <Link to={HOME_URL} className={styles.link}>
-            <span>Doctores</span>
+            <span>Inicio</span>
           </Link>
         </li>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
           <Link to={FAVORITES_URL} className={styles.link}>
             <span>Favoritos</span>
+          </Link>
+        </li>
+
+        {/* Prueba ernes para reservation page */}
+        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
+          <Link to={RESERVATION_URL} className={styles.link}>
+            <span>Reservacion (esto es una prueba)</span>
           </Link>
         </li>
       </ul>

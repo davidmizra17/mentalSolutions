@@ -8,6 +8,7 @@ import {
   LOGIN_URL,
   PROFILE_URL,
   REGISTER_URL,
+  RESERVATION_URL,
 } from "./constants/urls";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Layout } from "./pages/Layout/Layout";
@@ -15,9 +16,13 @@ import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { CharacterDetailPage } from "./pages/CharacterDetail/CharacterDetail";
+import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
+import { ReservationPage } from "./pages/Reservation/ReservationPage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
+import ChatPage from "./pages/ChatPage/ChatPage";
+import { DoctorDetailPage } from "./pages/DoctorDetail/DoctorDetailPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -52,7 +57,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={FAVORITES_URL}
             element={
               <PrivateRoute>
-                <h1>FAVORITES PAGE!!!</h1>
+                <ChatPage />
               </PrivateRoute>
             }
           />
@@ -61,10 +66,22 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={PROFILE_URL}
             element={
               <PrivateRoute>
-                <h1>USER PROFILE E E E E E </h1>
+                <UserProfilePage />
               </PrivateRoute>
             }
           />
+
+          <Route
+            path={RESERVATION_URL}
+            element={
+              <PublicRoute>
+                <ReservationPage />
+              </PublicRoute>
+            }
+          />
+
+          <Route path="/doctors/:doctorName" element={<DoctorDetailPage />} />
+
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
