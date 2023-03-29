@@ -17,14 +17,6 @@ export function HomePage() {
         Servicio de atención psicológica que brinda el acompañamiento necesario
         para cada paciente.
       </h3>
-
-      <div className="characters">
-        {isLoading ? (
-          <p className="loading">Loading...</p>
-        ) : (
-          doctors.map((doctor) => <Card user={doctor} key={doctor.id} />)
-        )}
-      </div>
     </div>
   );
 }

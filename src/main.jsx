@@ -73,9 +73,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route
             path={RESERVATION_URL}
             element={
-              <PublicRoute>
+              <PrivateRoute>
                 <ReservationPage />
-              </PublicRoute>
+              </PrivateRoute>
             }
           />
 

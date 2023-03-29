@@ -32,29 +32,17 @@ export function Navbar() {
             />
           </Link>
         </li>
-        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
-          <Link to={HOME_URL} className={styles.link}>
-            <span>Inicio</span>
-          </Link>
-        </li>
-        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
-          <Link to={FAVORITES_URL} className={styles.link}>
-            <span>Favoritos</span>
-          </Link>
-        </li>
-
-        {/* Prueba ernes para reservation page */}
-        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
-          <Link to={RESERVATION_URL} className={styles.link}>
-            <span>Reservacion (esto es una prueba)</span>
-          </Link>
-        </li>
       </ul>
 
       {!isLoadingUser && (
         <ul className={styles.menuList}>
           {!!user ? (
             <>
+              <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
+                <Link to={RESERVATION_URL} className={styles.link}>
+                  <span>Reservar cita</span>
+                </Link>
+              </li>
               <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
                 <Link to={PROFILE_URL} className={styles.link}>
                   <div className={styles.userAvatar} />
