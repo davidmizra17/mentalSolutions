@@ -5,6 +5,13 @@
   padding: 24px 120px;
 }
 
+.navbar .menuList .menuItemLeft .link .image {
+  display: block;
+  border-radius: 20px;
+  width: 35%;
+  height: auto;
+}
+
 .navbar .menuList {
   display: flex;
   align-items: center;

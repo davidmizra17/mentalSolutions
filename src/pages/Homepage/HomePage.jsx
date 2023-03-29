@@ -47,7 +47,7 @@ export function HomePage() {
     };
     getDoctors();
   }, []);
-
+  
   return (
     <div className={styles.container}>
       <div className={styles.div1}>
@@ -55,25 +55,22 @@ export function HomePage() {
             <img src={doc1} className={styles.hid}></img>
         </div>
         <div>
-            <h1 className={styles.h1}>
-                Atención a un click de distancia
-            </h1>
-            <p className={styles.p1}>
-                Servicio de atención psicológica que brinda el acompañamiento necesario para cada paciente.
-            </p>
-            <a href="" className={styles.a}>EMERGENCIA</a>
+          <h1 className={styles.h1}>Atención a un click de distancia</h1>
+          <p className={styles.p1}>
+            Servicio de atención psicológica que brinda el acompañamiento
+            necesario para cada paciente.
+          </p>
+          <a href="" className={styles.a}>
+            EMERGENCIA
+          </a>
         </div>
-    </div>
+      </div>
 
-
-
-
-
-    <div className={styles.div3}>
+      <div className={styles.div3}>
         <h1 className={styles.h12}>Nuestros aliados</h1>
-    </div>
-    
-    <div className={styles.slider}>
+      </div>
+
+      <div className={styles.slider}>
         <ul>
           <li><img src={unimet} alt="" /></li>
           <li><img src={platzi} alt=""/></li>
@@ -82,26 +79,21 @@ export function HomePage() {
         </ul>
       </div>
 
-
-
-
-
-
-
-
-
-
-    <div className={styles.div4}>
+      <div className={styles.div4}>
         <div className={styles.div5}>
             <img src={dc2} className={styles.hid}></img>
         </div>
         <div>
-            <h1 className={styles.h1a}>
-                ¿Quienes Somos?
-            </h1>
-            <p className={styles.p1}>
-                Nuestro equipo especializado de profesionales están disponibles las 24 horas del día, si tienes un problema y te sientes superado por este, aquí encontrarás psicólogos que te ayudarán a alcanzar las soluciones que necesitas.        </p>
-            <a href="" class={styles.a}>CONTÁCTANOS</a>
+          <h1 className={styles.h1a}>¿Quienes Somos?</h1>
+          <p className={styles.p1}>
+            Nuestro equipo especializado de profesionales están disponibles las
+            24 horas del día, si tienes un problema y te sientes superado por
+            este, aquí encontrarás psicólogos que te ayudarán a alcanzar las
+            soluciones que necesitas.{" "}
+          </p>
+          <a href="" className={styles.a}>
+            CONTÁCTANOS
+          </a>
         </div>
     </div>
 
@@ -161,10 +153,53 @@ export function HomePage() {
         )}
       </div>
 
-    <div className={styles.div9}>
-        <h1 className={styles.h1b}>
-            Pasos para Iniciar tu Terápia Online
-        </h1>
+      <section id={styles.psi}>
+        <div className={styles.div6}>
+          <h2 className={styles.h2}>Nuestros psicólogos</h2>
+          <p className={styles.p2}>
+            Trabamos solo con los mejores psicólogos profesionales y
+            experimentados, manteniendo una comunicación segura y privada.
+          </p>
+          <div className={styles.divresp}>
+            <div className={styles.div7}>
+              <div className={styles.div8}>
+                <img src="../../assets/m1.png" className={styles.img}></img>
+              </div>
+              <h3 className={styles.h3}>Armando Paredes</h3>
+
+              <p className={styles.p3}>
+                A través de un modelo de terapia relacional, te acompañaré para
+                que puedas responder de una manera...
+              </p>
+            </div>
+            <div className={styles.div7}>
+              <div className={styles.div8}>
+                <img src="../../assets/h1.png" className={styles.img}></img>
+              </div>
+              <h3 className={styles.h3}>Mónica Dávila</h3>
+
+              <p className={styles.p3}>
+                Mi objetivo es ayudarte a descubrir tu propia historia de
+                aprendizaje, patrones mal adaptativos y...
+              </p>
+            </div>
+            <div className={styles.div7}>
+              <div className={styles.div8}>
+                <img src="../../assets/h2.png" className={styles.img}></img>
+              </div>
+              <h3 className={styles.h3}>Valentina Díaz</h3>
+
+              <p className={styles.p3}>
+                Trabajo bajo una perspectiva integradora, intervengo como
+                psicoterapeuta del trauma y...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className={styles.div9}>
+        <h1 className={styles.h1b}>Pasos para Iniciar tu Terápia Online</h1>
         <div className={styles.div10}>
             <div className={styles.divresp2}>
                 <div className={styles.div11}>
@@ -184,11 +219,14 @@ export function HomePage() {
                 </div>
                 <a href="" className={styles.a2}>3.- Conéctate</a>
             </div>
-
+            <a href="" className={styles.a2}>
+              3.- Conéctate
+            </a>
+          </div>
         </div>
-    </div>
+      
 
-    <footer className={styles.div12}>
+      <footer className={styles.div12}>
         <div className={styles.div13}>
             <div className={styles.div14}>
                 <img src={ig} className={styles.img3}></img>
@@ -204,11 +242,11 @@ export function HomePage() {
             </div>
 
         </div>
-        <span className={styles.span}>&copy; 2023 Mental Solutions, S.A.P.I. de C.V. Todos los derechos reservados.</span>
-
-    </footer>
-
-      
+        <span className={styles.span}>
+          &copy; 2023 Mental Solutions, S.A.P.I. de C.V. Todos los derechos
+          reservados.
+        </span>
+      </footer>
     </div>
   );
 }
