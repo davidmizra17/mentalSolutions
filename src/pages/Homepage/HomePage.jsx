@@ -135,43 +135,30 @@ export function HomePage() {
             <div className={styles.div11}>
               <img src={ex1} className={styles.img2}></img>
             </div>
-            <a href="" className={styles.a2}>
+            <p href="" className={styles.a2}>
               1.- Regístrate
-            </a>
+            </p>
           </div>
           <div>
             <div className={styles.div11}>
               <img src={ex2} class={styles.img2}></img>
             </div>
-            <a href="" className={styles.a2}>
+            <p href="" className={styles.a2}>
               2.- Agenda tu cita
-            </a>
+            </p>
           </div>
           <div>
             <div className={styles.div11}>
               <img src={ex3} className={styles.img2}></img>
             </div>
-            <a href="" className={styles.a2}>
+            <p href="" className={styles.a2}>
               3.- Conéctate
-            </a>
+            </p>
           </div>
         </div>
       </div>
 
       <footer className={styles.div12}>
-        <div className={styles.div13}>
-          <div className={styles.div14}>
-            <img src={ig} className={styles.img3}></img>
-            <img src={tw} className={styles.img3}></img>
-          </div>
-          <div className={styles.div15}>
-            <h3 className={styles.h3b}>¡Sigue a Mental Solutions!</h3>
-          </div>
-          <div className={styles.div16}>
-            <img src={tk} className={styles.img3}></img>
-            <img src={yt} className={styles.img3}></img>
-          </div>
-        </div>
         <span className={styles.span}>
           &copy; 2023 Mental Solutions, S.A.P.I. de C.V. Todos los derechos
           reservados.

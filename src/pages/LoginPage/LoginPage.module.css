@@ -1,97 +1,235 @@
 .container {
-  background: #fff;
+  background: #BED8FF;
   display: flex;
   justify-content: center;
 }
 
 .container .form {
-  width: 380px;
-  padding: 24px;
-  border-radius: 8px;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 20px;
-  background: #fff;
-  margin-top: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 47.06px;
+  
+  background: #BED8FF;
+  position: absolute;
+  width: 1440px;
+  height: 884px;
+  left: 0px;
+  top: 116px;
 }
 
-.container .form .title {
-  font-size: 36px;
-  text-align: center;
-  letter-spacing: -2%;
-  line-height: 44px;
+.container .form .inputContainerLabel {
+  width: 735.35px;
+  height: 27px;
+  display: flex;
+  margin: 0 auto;
+  margin-inline-start: 500px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  
+  font-family: 'Josefin Sans';
+  font-style: normal;
   font-weight: 600;
-  color: #101828;
+  font-size: 25px;
+  line-height: 26px;
+
 }
 
-.container .form .welcomeTxt {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  color: #475467;
-  margin-bottom: 32px;
+.container .form .inputContainerInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 23.5312px;
+  gap: 14.71px;
+  margin: 0 auto;
+  
+  width: 400px;
+  height: 10px;
+
+  background: #FFFFFF;
+  border: 1.4707px solid #CCCCCC;
+  border-radius: 11.7656px;
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
-.container .form .inputContainer label {
-  display: block;
-  font-size: 14px;
+
+.container .form .googleBtn {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 22.3376px;
+  gap: 22.34px;
+  align-content: center;
+  margin-inline-start: 457px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  
+  width: 513.77px;
+  height: 55.89px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 27.2963px 50.6932px rgba(0, 0, 0, 0.07);
+  border-radius: 44.1211px 14.8917px;
+  
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+
+}
+
+.imageGoogle {
+  width: 35.74px;
+  height: 35.74px;
+  
+  background: #FFFFFF;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.textGoogleBtn {
+  width: 420px;
+  height: 10px;
+  
+  font-family: 'Josefin Sans';
+  font-style: normal;
   font-weight: 500;
-  line-height: 20px;
-  margin-bottom: 6px;
-  color: #344054;
-}
-.container .form .inputContainer input {
-  display: block;
-  width: 100%;
-  min-height: 44px;
-  padding: 10px 14px 10px 14px;
-  border-radius: 8px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  background-color: #fff;
-  border: 1px solid #d0d5dd;
-}
-.container .form .inputContainer input::placeholder {
-  color: #667085;
+  font-size: 29.414px;
+  line-height: 0px;
+  
+  color: rgba(0, 0, 0, 0.54);
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
-.container .form .submitBtn,
-.container .form .googleBtn {
-  display: block;
-  outline: none;
-  border: none;
-  padding: 10px 18px;
-  height: 44px;
-  background: #181b20;
-  border: 1px solid #181b20;
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  border-radius: 8px;
+/*
+.notRegistered {
+  font-family: 'Josefin Sans';
+  font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
-  cursor: pointer;
-}
+  font-size: 25px;
+  line-height: 26px;
 
-.container .form .googleBtn {
-  background: #ffffff;
-  border: 1px solid #d0d5dd;
-  color: #344054;
-}
-
-.container .form .loginRedirect {
   text-align: center;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #475467;
 }
 
-.container .form .loginRedirect .redirectLink {
-  font-weight: 600;
-  color: #181b20;
-  text-decoration: underline;
+.notRegisteredLink {
+
+}
+*/
+.container .form .goBackBtn {
+  width: 420.62px;
+  height: 35.3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 29.414px;
+  line-height: 29px;
+  
+  color: rgba(0, 0, 0, 0.54);
+ 
+  display: flex;
+  flex-direction: column;
+  padding: 23.5312px;
+  gap: 14.71px;
+  
+  width: 200.96px;
+  height: 83.06px;
+  
+  background: #FFFFFF;
+  
+  border: 1.4707px solid #7A5CFA;
+  border-radius: 73.5351px;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.container .form .signInBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 23.5312px;
+  gap: 14.71px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  
+  width: 200.96px;
+  height: 83.06px;
+
+  background: #7A5CFA;
+  border-radius: 73.5351px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.container .form .signIn {
+  width: 200.9px;
+  height: 36px;
+  
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36.7676px;
+  line-height: 35px;
+   
+  text-align: center;
+ 
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  color: #FFFFFF;
+}
+
+.container .form .goBack {
+  width: 200.9px;
+  height: 36px;
+  
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36.7676px;
+  line-height: 35px;
+   
+  text-align: center;
+ 
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  color: #7A5CFA;
+}
+
+.containerLeft {
+  padding-left: 10px;
+  padding-top:10px;
+  margin-left: 500px;
+  float:left;
+  position:relative;
+  height:auto;
+}
+
+.containerRight {
+  padding-left: 10px;
+  padding-top:10px;
+  margin-left:10px;
+  float:left;
+  position:relative;
+  height:auto;
 }

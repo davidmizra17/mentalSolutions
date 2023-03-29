@@ -224,7 +224,7 @@ li a:hover {
   padding-bottom: 0.25rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-  background-color: #fee2e2;
+  background-color: #ffd0d0;
   border-radius: 0.5rem;
 }
 
@@ -293,7 +293,7 @@ li a:hover {
 }
 
 .div7 {
-  background-color: lightslategray;
+  background-color: #ffd0d0;
   padding: 0 50px 0 50px;
   border-radius: 15px;
   margin: 30px;
@@ -315,7 +315,7 @@ li a:hover {
 
 .h3 {
   font-size: 25px;
-  color: #f2f2f2;
+  color: rgb(255, 255, 255);
 
   /*min-[850px]:mt-[0px]*/
 }

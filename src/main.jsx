@@ -20,17 +20,20 @@ import { HomePage } from "./pages/Homepage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 <<<<<<< HEAD
+<<<<<<< HEAD
 //import { DoctorDetailPage } from "./pages/DoctorDetail/DoctorDetailPage";
 =======
 import { DoctorDetailsPage } from "./pages/DoctorDetailsPage/DoctorDetailsPage";
 >>>>>>> 688c6c18dfe835397fb3a542bfe5dcdba206c2eb
+=======
+>>>>>>> dbef60116a78fb6b8e31c9d872232d61682b5474
 import { UserProfilePage } from "./pages/UserProfilePage/UserProfilePage";
 import { ReservationPage } from "./pages/Reservation/ReservationPage";
 import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
 import ChatPage from "./pages/ChatPage/ChatPage";
-import { DoctorDetailPage } from "./pages/DoctorDetail/DoctorDetailPage";
+import { DoctorDetailsPage } from "./pages/DoctorDetailsPage/DoctorDetailsPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -100,7 +103,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             }
           />
 
-          <Route path="/doctors/:doctorName" element={<DoctorDetailPage />} />
+          <Route path="/doctors/:doctorName" element={<DoctorDetailsPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>
