@@ -9,24 +9,6 @@ export function HomePage() {
   const [doctors, setDoctors] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const getDoctors = async () => {
-      const q = query(
-        collection(db, USERS_COLLECTION),
-        where("role", "==", "Doctor")
-      );
-
-      const querySnapshot = await getDocs(q);
-      const docs = [];
-      querySnapshot.forEach((doc) => {
-        docs.push({ id: doc.id, ...doc.data() });
-      });
-      setDoctors(docs);
-      setIsLoading(false);
-    };
-    getDoctors();
-  }, []);
-
   return (
     <div className="container">
       <h1 className="title">MentalSolutions</h1>

@@ -10,6 +10,7 @@ import {
 import { useUserContext } from "../../contexts/UserContext";
 import styles from "./Navbar.module.css";
 import { logout } from "../../firebase/auth";
+import logo from "../../assets/mental_solutions.png";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -22,6 +23,15 @@ export function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.menuList}>
+        <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
+          <Link to={HOME_URL} className={styles.link}>
+            <img
+              src={logo}
+              alt="mental solutions logo"
+              className={styles.image}
+            />
+          </Link>
+        </li>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
           <Link to={HOME_URL} className={styles.link}>
             <span>Inicio</span>
