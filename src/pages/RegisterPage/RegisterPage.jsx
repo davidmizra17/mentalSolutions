@@ -20,7 +20,6 @@ export function RegisterPage() {
   const { user, isLoadingUser } = useUserContext();
 
   const onSuccess = () => {
-    console.log("GOLAZO");
     if (user.role === "Paciente") {
       navigate("/profile-patient");
     } else if (user.role === "Doctor") {
