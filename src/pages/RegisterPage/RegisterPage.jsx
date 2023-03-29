@@ -1,6 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
-import { HOME_URL, LOGIN_URL, PROFILE_URL } from "../../constants/urls";
+import {
+  HOME_URL,
+  LOGIN_URL,
+  PATIENT_PROFILE_URL,
+  DOCTOR_PROFILE_URL,
+} from "../../constants/urls";
 import {
   registerWithEmailAndPassword,
   signInWithGoogle,

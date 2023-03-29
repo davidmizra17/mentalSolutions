@@ -6,9 +6,10 @@ import {
   FAVORITES_URL,
   HOME_URL,
   LOGIN_URL,
-  PROFILE_URL,
   REGISTER_URL,
   RESERVATION_URL,
+  PATIENT_PROFILE_URL,
+  DOCTOR_PROFILE_URL,
 } from "./constants/urls";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Layout } from "./pages/Layout/Layout";
@@ -22,8 +23,7 @@ import "./index.css";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute";
 import ChatPage from "./pages/ChatPage/ChatPage";
-import { DoctorDetailPage } from "./pages/DoctorDetail/DoctorDetailPage";
-
+import { DoctorPage } from "./pages/DoctorPage/DoctorPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -57,16 +57,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </PrivateRoute>
             }
           />
-
-          <Route
-            path={PROFILE_URL}
-            element={
-              <PrivateRoute>
-                <UserProfilePage />
-              </PrivateRoute>
-            }
-          />
-
           <Route
             path={RESERVATION_URL}
             element={
@@ -83,8 +73,22 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </PrivateRoute>
             }
           />
-
-          <Route path="/doctors/:doctorName" element={<DoctorDetailPage />} />
+          <Route
+            path={DOCTOR_PROFILE_URL}
+            element={
+              <PrivateRoute>
+                <DoctorPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={PATIENT_PROFILE_URL}
+            element={
+              <PrivateRoute>
+                <UserProfilePage />
+              </PrivateRoute>
+            }
+          />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>
