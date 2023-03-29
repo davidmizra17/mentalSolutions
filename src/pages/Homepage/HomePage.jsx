@@ -141,7 +141,7 @@ export function HomePage() {
           </div>
           <div>
             <div className={styles.div11}>
-              <img src={ex2} class={styles.img2}></img>
+              <img src={ex2} className={styles.img2}></img>
             </div>
             <p href="" className={styles.a2}>
               2.- Agenda tu cita

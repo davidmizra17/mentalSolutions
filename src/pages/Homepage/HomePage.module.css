@@ -340,7 +340,7 @@ li a:hover {
   font-size: 60px;
   padding: 12px 0 12px 10;
   color: 9DB9FF;
-
+  text-align: center;
   /*max-[850px]:leading-tight */
 }
 

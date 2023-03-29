@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background: #181b20;
-  padding: 24px 120px;
+  background: #9db9ff;
+  padding: 0px;
 }
 
 .navbar .menuList .menuItemLeft .link .image {
@@ -29,10 +29,10 @@
 }
 
 .navbar .menuList .menuItem.menuItemLeft {
-  margin-right: 8px;
+  margin-right: 0px;
 }
 .navbar .menuList .menuItem.menuItemRight {
-  margin-left: 8px;
+  margin-left: 0px;
 }
 
 .navbar .menuList .menuItem .link {
@@ -40,7 +40,7 @@
   align-items: center;
   padding: 8px 16px;
   text-decoration: none;
-  color: #fff;
+  color: #000000;
 }
 
 .navbar .menuList .menuItem .link.logoutBtn {
@@ -63,6 +63,6 @@
   width: 32px;
   height: 32px;
   border-radius: 20px;
-  background: #3c3e44;
+  background: #443c3c;
   margin-right: 8px;
 }

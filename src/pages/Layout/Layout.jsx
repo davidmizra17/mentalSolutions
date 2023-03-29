@@ -8,32 +8,6 @@ export function Layout() {
   return (
     <UserContextProvider>
       <main>
-        {/* <nav>
-          <input type="checkbox" id="check"></input>
-          <label for="check" className={styles.checkbtn}>
-            <img src="img/barras.png" className={styles.bar}></img>
-          </label>
-          <a href="#" className={styles.enlace}>
-            <img src={logos} alt="" className={styles.logo}></img>
-          </a>
-          <ul>
-            <li>
-              <a href="#">Inicio</a>
-            </li>
-            <li>
-              <a href="#">Contacto</a>
-            </li>
-            <li>
-              <a href="#">Iniciar Sesion</a>
-            </li>
-            <li>
-              <a className={styles.active} href="#">
-                Registrarse
-              </a>
-            </li>
-          </ul>
-        </nav>
-         */}
         <Navbar />
         <section className="body">
           <Outlet />
