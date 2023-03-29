@@ -50,14 +50,14 @@ export function RegisterPage() {
   };
 
   return (
-    <div className={styles.container}>
+    /*<div className={styles.container}>
       <form className={styles.form}>
         <h1 className={styles.title}>Crea una cuenta</h1>
         <p className={styles.welcomeTxt}>
           Bienvenido! Te invitamos a ser parte de nuestra plataforma.
         </p>
 
-        {/* NAME FIELD */}
+        {/* NAME FIELD }
         <div className={styles.inputContainer}>
           <label htmlFor="name">
             <span>Ingresa tu nombre y apellido</span>
@@ -71,7 +71,7 @@ export function RegisterPage() {
           />
         </div>
 
-        {/* EMAIL FIELD */}
+        {/* EMAIL FIELD }
         <div className={styles.inputContainer}>
           <label htmlFor="email">
             <span>Ingresa tu email</span>
@@ -85,7 +85,7 @@ export function RegisterPage() {
           />
         </div>
 
-        {/* PASSWORD FIELD */}
+        {/* PASSWORD FIELD }
         <div className={styles.inputContainer}>
           <label htmlFor="password">
             <span>Ingresa tu contraseña</span>
@@ -99,7 +99,7 @@ export function RegisterPage() {
           />
         </div>
 
-        {/* AGE FIELD */}
+        {/* AGE FIELD }
         <div className={styles.inputContainer}>
           <label htmlFor="age">
             <span>Ingresa tu edad</span>
@@ -157,6 +157,117 @@ export function RegisterPage() {
           <span className={styles.redirectLink}>Inicia sesión</span>
         </Link>
       </form>
-    </div>
+    </div>*/
+    <div className={styles.container}>
+      <form className={styles.form}>
+        <h1 className={styles.title}>Crea una cuenta</h1>
+        <p className={styles.welcomeTxt}>
+          Bienvenido! Te invitamos a ser parte de nuestra plataforma.
+        </p>
+
+        <div className={styles.inputContainer}>
+          <label htmlFor="name">
+            <span>Ingresa tu nombre y apellido</span>
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Eg. John Doe"
+            onChange={onChange}
+          />
+        </div>
+  
+
+        <div className={styles.inputContainer}>
+          <label htmlFor="email">
+            <span>Ingresa tu email</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Eg. john@email.com"
+            onChange={onChange}
+          />
+        </div>
+  
+        <div className={styles.inputContainer}>
+          <label htmlFor="password">
+            <span>Ingresa tu contraseña</span>
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="********"
+            onChange={onChange}
+          />
+        </div>
+  
+
+        <div className={styles.inputContainer}>
+          <label htmlFor="age">
+            <span>Ingresa tu edad</span>
+          </label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            placeholder="Eg. 24"
+            onChange={onChange}
+          />
+        </div>
+          <div className={styles.select}>
+            <label htmlFor="role">
+              <span>¿Es usted doctor o paciente?</span>
+              <br />
+            </label>
+            <div className={styles.options}>
+                <label htmlFor="doctor" >Doctor</label>
+                <input
+                type="radio"
+                name="role"
+                id="doctor"
+                value="Doctor"
+                checked={formData.role === "Doctor"}
+                onChange={onChange}
+                />
+            </div>
+            <div className={styles.options}>
+                <label htmlFor="paciente" >Paciente</label>
+                <input
+                type="radio"
+                name="role"
+                id="paciente"
+                value="Paciente"
+                checked={formData.role === "Paciente"}
+                onChange={onChange}
+                />
+                </div>
+          </div>
+          <button
+            type="submit"
+            className={styles.submitBtn}
+            onClick={handleSubmit}
+          >
+            Entrar
+          </button>
+  
+          <button
+            type="button"
+            className={styles.googleBtn}
+            onClick={handleGoogleClick}
+          >
+            Registro con google
+          </button>
+          <div className={styles.centrate}>
+            <Link to={LOGIN_URL} className={styles.loginRedirect}>
+                ¿Ya tienes una cuenta?{" "}
+                <span className={styles.redirectLink}>IniciaR sesión</span>
+            </Link>
+          </div>
+        </form>
+      </div>
   );
 }

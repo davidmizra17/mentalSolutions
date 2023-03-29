@@ -21,7 +21,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className={styles.navbar}>
+    /*<nav className={styles.navbar}>
       <ul className={styles.menuList}>
         <li className={`${styles.menuItem} ${styles.menuItemLeft}`}>
           <Link to={HOME_URL} className={styles.link}>
@@ -75,6 +75,32 @@ export function Navbar() {
           )}
         </ul>
       )}
-    </nav>
+    </nav>*/
+    <nav>
+          <input type="checkbox" id="check"></input>
+          <label for="check" className={styles.checkbtn}>
+            <img src="img/barras.png" className={styles.bar}></img>
+          </label>
+          <a href="#" className={styles.enlace}>
+            <img src={logos} alt="" className={styles.logo}></img>
+          </a>
+          <ul>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#">Contacto</a>
+            </li>
+            <li>
+              <a href="#">Iniciar Sesion</a>
+            </li>
+            <li>
+              <a className={styles.active} href="#">
+                Registrarse
+              </a>
+            </li>
+          </ul>
+        </nav>
+         
   );
 }
